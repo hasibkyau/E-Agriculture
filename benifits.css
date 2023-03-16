@@ -1,0 +1,270 @@
+html {
+    scroll-behavior: smooth;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /*  Navbar Start   */
+  #header {
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 8px 12px -2px;
+      z-index: 999;
+      background: #ffff;
+  }
+  .navbar{
+    box-shadow: rgba(184, 189, 198, 0.25) 0px 0px 0px 60px;
+    margin-top: 8px;
+    height: 70px;
+  }
+  
+  h2{
+    text-align: center;
+    color: green;
+    font-family: 'Times New Roman';
+  }
+  
+  .mainNav .navbar-brand img {
+    width: 85px;
+    height: 61px;
+    margin-left: 25px;
+  }
+  .mainNav .nav-item .nav-link {
+    font-size: 22px;
+    font-weight: 600;
+    color: black !important;
+    margin-left: 30px;
+  }
+  .mainNav .nav-item .nav-link:hover {
+    color: green !important;
+  }
+  
+  .mainNav .nav-item.active .nav-link {
+    color: firebrick !important;
+  }
+  /* ---- Partner ---- */
+  #Partner{
+    width: 130px;
+    height: 40px;
+    position: relative;
+    left: 80px;
+    top: 5px;
+    border: 1px solid rgb(60, 13, 13);
+    border-radius: 25px;
+    background-color: rgb(116, 12, 12);
+  }
+  #Partner a{
+    position: relative;
+    bottom: 7px;
+    right: 10px;
+    color: white !important;
+  }
+  #Partner a:hover {
+    color: green !important;
+  }
+  
+  #loginBtn{
+    width: 100px;
+    height: 40px;
+    border-radius: 18px;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    border: 2px solid rgb(39, 246, 39);
+    font-weight: bold;
+    margin-right: 25px ;
+    padding-top: 3px;
+  }
+  #loginBtn:hover {
+    background: rgb(29, 245, 29);
+    color: #fff;
+  }
+  .search {
+    width: 25px;
+    cursor: pointer;
+    margin-right: 40px;
+  }
+  #searchModal .modal-content {
+    min-height: 500px;
+    max-height: 600px;
+    
+  }
+  #searchBox {
+    width: 390px;
+    margin-left: 40px;
+    font-size: 20px;
+    color: #000;
+    font-style: italic;
+    background-color: rgba(184, 189, 198, 0.25);
+  }
+  /*  Navbar End  */
+
+  /*--- Dropdown Start ---*/
+
+.dropdown-container{
+  position: relative;
+  display: inline;
+}
+.dropdown-content ul li{
+  list-style: none;
+}
+.dropdown-container a{
+
+}
+.dropdown-content{
+  box-shadow: rgba(9, 30, 66, 0.25) 1px 0px 10px 5px;
+  width: 600px;
+  height: 250px;
+  border-radius: 8px;
+  position: absolute;
+  left: 40px;
+  background-color: #fff;
+  padding: 10px;
+  overflow: hidden;
+  display: none;
+  
+ 
+}
+.dropdown-content a{
+  display: inline;
+  font-size: 20px;
+  color: black;
+}
+.dropdown-content a:hover{
+  color: green;
+}
+.dropdown-container:hover .dropdown-content{
+  display: block;
+}
+.teamm{
+  position: relative;
+  left: 270px;
+  top: -85px;
+}
+.Hiw{
+  position: relative;
+  bottom: 60px;
+}
+.dropdown-paragraph{
+  width: 200px;
+  font-size: 12px;
+  margin-left: 85px;
+  margin-top: -15px;
+}
+
+.dropdown-image{
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+}
+
+/*--- Dropdown End ---*/
+
+.allbody{
+    background-color: rgba(134, 137, 144, 0.25);
+}
+.bdy{
+    width: 100%;
+    background-color: rgba(134, 137, 144, 0.25);
+    padding: 0px 25px 25px 25px;
+
+}
+#headline{
+    text-align: center;
+    color: green;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+    padding-top: 20px;
+}
+#hp{
+    width: 90%;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 72px;
+}
+
+.body{
+    width: 90%;
+   justify-content: center;
+   margin-left: 72px;
+}
+.EB{
+    width: 100%;
+    height: 600px;
+    border: 1px solid black;
+    margin-top: 5px;
+
+}
+.image{
+    width: 549px;
+    height: 331px;
+    border-radius: 15px;
+    position: relative;
+}
+.img1{
+    height: 360px;
+    width: 550px;
+    border-radius: 15px;
+}
+.Eheading{
+    text-align: center;
+    font-weight: bold;
+    width: 500px;
+    margin-left: 645px;
+    margin-top: -325px;
+}
+.ep{
+    width: 585px;
+    font-size: 18px;
+    color: black;
+    margin-left: 630px;
+    padding: 5px;
+}
+span{
+    font-weight: bold;
+}
+.Sheading{
+    text-align: center;
+    font-weight: bold;
+    width: 500px;
+    margin-left:5px;
+    margin-top: 150px;
+}
+.sb{
+    width: 585px;
+    font-size: 18px;
+    color: black;
+    padding: 5px;
+}
+.img2{
+    height: 360px;
+    width: 550px;
+    border-radius: 15px;
+    margin-left: 660px;
+    margin-top: -330px;
+}
+.econo{
+    width: 100%;
+    height: 120vh;
+    border-radius: 20px;
+    margin-top: 20px;
+    background-color: rgba(134, 137, 144, 0.25);
+    padding-top: 10px;
+}
+.Ecoheading{
+    width: 900px;
+    text-align: center;
+    margin-left: 225px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+.Eco{
+    width: 90%;
+    font-size: 18px;
+    margin-left: 72px;
+}
+.Ecoimg{
+    width: 100%;
+    height: 400px;
+}

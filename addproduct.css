@@ -1,0 +1,233 @@
+html {
+    scroll-behavior: smooth;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /*  Navbar Start   */
+  #header {
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 8px 12px -2px;
+      z-index: 999;
+      background: #ffff;
+  }
+  
+  .navbar{
+    box-shadow: rgba(184, 189, 198, 0.25) 0px -50px 0px 0px;
+    margin-top: 8px;
+    height: 70px;
+  }
+  
+  h2{
+    text-align: center;
+    color: green;
+    font-family: 'Times New Roman';
+  }
+  
+  .mainNav .navbar-brand img {
+    width: 85px;
+    height: 60px;
+    margin-left: 25px;
+  }
+  
+  .mainNav .nav-item .nav-link {
+    font-size: 22px;
+    font-weight: 600;
+    color: black !important;
+    margin-left: 30px;
+  }
+  
+  .mainNav .nav-item .nav-link:hover {
+    color: green !important;
+  }
+  /*
+  .mainNav .nav-item.active .nav-link {
+    color: firebrick !important;
+  }
+  
+  .mainNav .nav-item {
+    padding-left: 3rem;
+  }
+  */
+  /* --- Partner ---*/
+  #Partner{
+    width: 130px;
+    height: 40px;
+    position: relative;
+    left: 80px;
+    top: 5px;
+    border: 1px solid rgb(60, 13, 13);
+    border-radius: 25px;
+    background-color: rgb(116, 12, 12);
+  }
+  #Partner a{
+    position: relative;
+    bottom: 7px;
+    right: 10px;
+    color: white !important;
+  }
+  #Partner a:hover {
+    color: green !important;
+  }
+  #loginBtn{
+    width: 100px;
+    height: 40px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    border: 2px solid rgb(39, 246, 39);
+    font-weight: bold;
+    margin-right: 25px ;
+    padding-top: 3px;
+  }
+  #loginBtn:hover {
+    background: rgb(29, 245, 29);
+    color: #fff;
+  }
+  
+  .search {
+    width: 25px;
+    cursor: pointer;
+    margin-right: 40px;
+  }
+  
+  #searchModal .modal-content {
+    min-height: 500px;
+    max-height: 600px;
+    
+  }
+  #searchBox {
+    width: 390px;
+    margin-left: 40px;
+    font-size: 20px;
+    color: #000;
+    font-style: italic;
+    background-color: rgba(184, 189, 198, 0.25),rgba(184, 189, 198, 0.25) 0px 0px 0px 50px;;
+  }
+  /*  Navbar End  */
+
+  /*    Add Product System   */
+
+  .addproductsystem{
+    height: 1050px;
+    width: 1200px;
+    position: relative;
+    left: 70px;
+    top: 10px;
+
+  }
+  #APIPIS{
+    width: 1100px;
+  font-family: 'Times New Roman';
+  font-weight: bold;
+  color: green;
+  text-align: center;
+  padding:15px;
+  }
+
+  .addproduct{
+    height: 850px;
+    width: 800px;
+    padding: 10px;
+    margin-left: 150px;
+    position: relative;
+  }
+  #padd{
+    font-weight: bold;
+    font-family: 'Times New Roman';
+    color: green;
+    font-size: 34px;
+    margin-left: 30px;
+  }
+  .style{
+    font-family: 'Times New Roman';
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 50px;
+  }
+  .PNstyle{
+    height: 40px;
+    width: 600px;
+    margin-left: 50px;
+
+  }
+  .PNstyle::placeholder{
+    font-size: 18px;
+    font-style: italic;
+
+  }
+  .options{
+    height: 40px;
+    width: 600px;
+    margin-left: 50px;
+  }
+  .options option{
+    font-size: 18px;
+  }
+  .PCstyle{
+    height: 40px;
+    width: 600px;
+    margin-left: 50px;
+  }
+  .PCstyle::placeholder{
+    font-size: 18px;
+    font-style: italic;
+
+  }
+  .PDstyle{
+    height: 100px;
+    width: 600px;
+    margin-left: 50px;
+
+  }
+  .PDstyle::placeholder{
+    font-size: 18px;
+    font-style: italic;
+  }
+  .PPstyle{
+    height: 40px;
+    width: 600px;
+    margin-left: 50px;
+  }
+  .PQstyle{
+    height: 40px;
+    width: 600px;
+    margin-left: 50px;
+  }
+  .sub{
+    height: 40px;
+    width: 300px;
+    font-size: 23px;
+    border: 2px solid green;
+    border-radius: 20px;
+    margin-left: 100px;
+  }
+  .sub:hover{
+    background: rgb(39, 246, 39);
+    border: 3px solid rgb(39, 246, 39);
+    color: white;
+  }
+  
+  .PartnerInformation{
+    height: 50px;
+    width: 300px;
+    margin-left: 15px;
+    display: block;
+    border: 2px solid black;
+    position: relative;
+    top: -50px;
+    left: 500px;
+    text-align: center;
+    padding: 2px;
+    font-size: 25px;
+    border: 2px solid green;
+    color: green;
+    border-radius: 22px;
+  }
+  .PartnerInformation:hover{
+    background: rgb(39, 246, 39);
+    color: white;
+    border: 3px solid rgb(39, 246, 39);
+  }

@@ -1,0 +1,236 @@
+html {
+    scroll-behavior: smooth;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /*  Navbar Start   */
+  #header {
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 8px 12px -2px;
+      z-index: 999;
+      background: #ffff;
+  }
+  
+  .navbar{
+    box-shadow: rgba(184, 189, 198, 0.25) 0px -50px 0px 0px;
+    margin-top: 8px;
+    height: 70px;
+  }
+  
+  h2{
+    text-align: center;
+    color: green;
+    font-family: 'Times New Roman';
+  }
+  
+  .mainNav .navbar-brand img {
+    width: 85px;
+    height: 60px;
+    margin-left: 25px;
+  }
+  
+  .mainNav .nav-item .nav-link {
+    font-size: 22px;
+    font-weight: 600;
+    color: black !important;
+    margin-left: 30px;
+  }
+  
+  .mainNav .nav-item .nav-link:hover {
+    color: green !important;
+  }
+  /*
+  .mainNav .nav-item.active .nav-link {
+    color: firebrick !important;
+  }
+  
+  .mainNav .nav-item {
+    padding-left: 3rem;
+  }
+  */
+  /* --- Partner ---*/
+  #Partner{
+    width: 130px;
+    height: 40px;
+    position: relative;
+    left: 80px;
+    top: 5px;
+    border: 1px solid rgb(60, 13, 13);
+    border-radius: 25px;
+    background-color: rgb(116, 12, 12);
+  }
+  #Partner a{
+    position: relative;
+    bottom: 7px;
+    right: 10px;
+    color: white !important;
+  }
+  #Partner a:hover {
+    color: green !important;
+  }
+  #loginBtn{
+    width: 100px;
+    height: 40px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    border: 2px solid rgb(39, 246, 39);
+    font-weight: bold;
+    margin-right: 25px ;
+    padding-top: 3px;
+  }
+  #loginBtn:hover {
+    background: rgb(29, 245, 29);
+    color: #fff;
+  }
+  
+  .search {
+    width: 25px;
+    cursor: pointer;
+    margin-right: 40px;
+  }
+  
+  #searchModal .modal-content {
+    min-height: 500px;
+    max-height: 600px;
+    
+  }
+  #searchBox {
+    width: 390px;
+    margin-left: 40px;
+    font-size: 20px;
+    color: #000;
+    font-style: italic;
+    background-color: rgba(184, 189, 198, 0.25),rgba(184, 189, 198, 0.25) 0px 0px 0px 50px;;
+  }
+  /*  Navbar End  */
+
+  /* Partner Info System */
+
+  .PartnerInfo{
+    width: 1200px;
+    height: 980px;
+    margin-left: 75px;
+    margin-top: 35px;
+  }
+
+  #padd{
+    font-weight: bold;
+    font-family: 'Times New Roman';
+    color: green;
+    font-size: 34px;
+  }
+
+  .partnerbio{
+    height: 950px;
+    width: 700px;
+    margin-left: 200px;
+    
+  }
+  
+  .style2{
+    font-family: 'Times New Roman';
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 15px;
+    color: green;
+  }
+  
+  .PName{
+    height: 40px;
+    width: 600px;
+    margin-left: 15px;
+    
+  }
+
+  .PName::placeholder{
+    font-size: 18px;
+    font-style: italic;
+
+  }
+  
+  .PNumber{
+    height: 40px;
+    width: 600px;
+    margin-left: 15px;
+  }
+  .PNumber::placeholder{
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  .PEmail{
+    height: 40px;
+    width: 600px;
+    margin-left: 15px;
+    
+  }
+  
+  .PEmail::placeholder{
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  .PPhoto{
+    height: 40px;
+    width: 600px;
+    margin-left: 15px;
+    
+  }
+  
+  .PPhoto::placeholder{
+    font-size: 18px;
+    font-style: italic;
+  }
+ 
+  .GName{
+    height: 40px;
+    width: 600px;
+    margin-left: 15px;
+    
+  }
+  
+  .GName::placeholder{
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  .GPhoto{
+    height: 40px;
+    width: 600px;
+    margin-left: 15px;
+    
+  }
+  
+  .GPhoto::placeholder{
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  .GDescription{
+    height: 90px;
+    width: 600px;
+    margin-left: 15px;
+    
+  }
+  .GDescription::placeholder{
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  .sub{
+    height: 40px;
+    width: 200px;
+    font-size: 20px;
+    border: 2px solid green;
+    border-radius: 20px;
+    margin-left: 30px;
+  }
+  .sub:hover{
+    background: rgb(39, 246, 39);
+    border: 3px solid rgb(39, 246, 39);
+    color: white;
+  }

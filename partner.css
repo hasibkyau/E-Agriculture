@@ -1,0 +1,351 @@
+html {
+    scroll-behavior: smooth;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /*  Navbar Start   */
+  #header {
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 8px 12px -2px;
+      z-index: 999;
+      background: #ffff;
+  }
+  
+  .navbar{
+    box-shadow: rgba(184, 189, 198, 0.25) 0px -50px 0px 0px;
+    margin-top: 8px;
+    height: 70px;
+  }
+  
+  h2{
+    text-align: center;
+    color: green;
+    font-family: 'Times New Roman';
+  }
+  
+  .mainNav .navbar-brand img {
+    width: 85px;
+    height: 60px;
+    margin-left: 25px;
+  }
+  
+  .mainNav .nav-item .nav-link {
+    font-size: 22px;
+    font-weight: 600;
+    color: black !important;
+    margin-left: 30px;
+  }
+  
+  .mainNav .nav-item .nav-link:hover {
+    color: green !important;
+  }
+  /*
+  .mainNav .nav-item.active .nav-link {
+    color: firebrick !important;
+  }
+  
+  .mainNav .nav-item {
+    padding-left: 3rem;
+  }
+  */
+  /* --- Partner ---*/
+  #Partner{
+    width: 130px;
+    height: 40px;
+    position: relative;
+    left: 80px;
+    top: 5px;
+    border: 1px solid rgb(60, 13, 13);
+    border-radius: 25px;
+    background-color: rgb(116, 12, 12);
+  }
+  #Partner a{
+    position: relative;
+    bottom: 7px;
+    right: 10px;
+    color: white !important;
+  }
+  #Partner a:hover {
+    color: green !important;
+  }
+  #loginBtn{
+    width: 100px;
+    height: 40px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    border: 2px solid rgb(39, 246, 39);
+    font-weight: bold;
+    margin-right: 25px ;
+    padding-top: 3px;
+  }
+  #loginBtn:hover {
+    background: rgb(29, 245, 29);
+    color: #fff;
+  }
+  
+  .search {
+    width: 25px;
+    cursor: pointer;
+    margin-right: 40px;
+  }
+  
+  #searchModal .modal-content {
+    min-height: 500px;
+    max-height: 600px;
+    
+  }
+  #searchBox {
+    width: 390px;
+    margin-left: 40px;
+    font-size: 20px;
+    color: #000;
+    font-style: italic;
+    background-color: rgba(184, 189, 198, 0.25),rgba(184, 189, 198, 0.25) 0px 0px 0px 50px;;
+  }
+  /*  Navbar End  */
+
+  /* Registration  System */
+  #headline{
+    margin-left: 300px;
+    margin-top: 10px;
+    color: green;
+  }
+ .registrationform{
+    width: 600px;
+    height: 820px;
+    border: 3px solid green;
+    padding: 5px;
+    margin: 15px 70px;
+    margin-top: 30px;
+    border-left: none;
+
+ }
+ .Registration{
+    width: 500px;
+    height: 770px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 8px 12px -2px,
+    rgba(184, 189, 198, 0.25) 0px 5px 20px 20px;
+    padding: 5px;
+    margin: 10px 40px;
+    margin-top: 10px;
+    border-radius: 22px;
+    border-left: none;
+    font-size: 15px;
+    color: white;
+
+}
+
+li{
+    list-style: none;
+    float: left;
+    margin-left: 10px;
+    font-size: 20px;
+    color: black;
+
+}
+
+.head{
+    width: 380px;
+    height: 40px;
+    font-size: 32px;
+    font-weight: bold;
+    color: green;
+    text-align: center;
+    border: 2px solid green;
+    margin-top: 13px;
+    margin-left: 40px;
+    border-radius: 10px;
+    font-family: 'Times New Roman';
+}
+.styl{
+    width: 380px;
+    height: 40px;
+    font-size: 20px;
+    margin-left: 40px;
+    border-bottom: 2px solid green;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: transparent;
+   
+}
+.styl::placeholder{
+    font-style: italic;
+    font-size: 17px;
+}
+.labelform{
+    font-weight: bold;
+    margin-left: 40px;
+    font-size: 20px;
+    color: green;
+}
+#para{
+    margin-left: 40px;
+    width: 380px;
+    text-align: center;
+    color: rgb(120, 157, 179);
+    font-size: 18px;
+    margin-top: 5px;
+    
+}
+
+.sub{
+    width: 210px;
+    height: 35px;
+    border-radius: 18px;
+    border: 1px solid blue;
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    margin-top: -15px;
+    margin-right: 5px;
+    color: greenyellow;
+}
+.sub:hover{
+    background: skyblue;
+    color: red;
+}
+  /* Partner Log in*/
+  .Loged{
+    height: 820px;
+    width: 620px;
+    position: relative;
+    margin-right: 100px;
+    border: 3px solid green;
+    border-left: none;
+    border-right: none;
+    top: -835px;
+    left: 650px;
+
+  }
+  .PartnerLogin{
+    width: 500px;
+    height: 720px;
+    margin-left: 90px;
+    border-radius: 20px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 8px 12px -2px,
+    rgba(184, 189, 198, 0.25) 0px 5px 20px 20px;
+  }
+  .PartnerLogin h3{
+    width: 400px;
+    height: 50px;
+    position: relative;
+    top: 20px;
+    font-size: 35px;
+    margin-top: 20px;
+    margin-left:50px;
+    color: green;
+    text-align: center;
+    background: white center;
+    border: 2px solid green;
+    border-radius: 5px;
+}
+.PartnerLogin .labellog{
+    position: relative;
+    top: 30px;
+    font-weight: bold;
+    font-size: 23px;
+    margin-left:50px;
+    margin-top: 25px;
+    color: green;
+}
+.PartnerLogin input{
+    width: 400px;
+    height: 50px;
+    color: white;
+    background: transparent;
+    border-bottom: 2px solid green;
+    margin-top: 25px;
+    margin-left:50px;
+
+}
+.PartnerLogin button{
+    width: 400px;
+    height: 50px;
+    background: blue;
+    border: 2px solid blue;
+    border-radius: 10px;
+    position: relative;
+    top: 20px;
+    left: 50px;
+}
+.PartnerLogin button a{
+    font-size: 25px;
+    color: white;
+}
+.PartnerLogin button:hover{
+    background: rgb(144, 197, 29);
+    border:2px solid rgb(144, 197, 29);
+    color: white;
+}
+.PartnerLogin #fp{
+    margin-left: 50px;
+    display: block;
+    font-size: 20px;
+ }
+ #fp:hover{
+    color: rgb(144, 197, 29);
+ }
+a .cna{
+    border: 1px solid orange;
+}
+
+  /*
+  .form{
+    width: 250px;
+    height: 380px;
+    background: linear-gradient(to top,rgba(0,0,0,0.8)50%, rgba(0,0,0,0.8)50%);
+    border-radius: 10px;
+    position: absolute;
+    top: -20px;
+    left: 880px;
+    margin-left: 70px;
+    padding: 25px;
+}
+.form h3{
+    width: 200px;
+    height: 30px;
+    font-size: 22px;
+    color: green;
+    text-align: center;
+    background: white center;
+    border-radius: 5px;
+    padding: 2px;
+}
+.form input{
+    width: 200px;
+    height: 35px;
+    color: white;
+    background: transparent;
+    border-bottom: 1px solid orange;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-top: 25px;
+
+}
+.form button{
+    width: 200px;
+    height: 32px;
+    background: blue;
+    border: 1px solid blue;
+    border-radius: 10px;
+}
+.form button a{
+    font-size: 16px;
+    color: white;
+}
+a .cna{
+    border: 1px solid orange;
+}
+
+body{
+    background-image: url(nature.jpg);
+    background-position: center;
+    background-size: 100%;
+}
+*/

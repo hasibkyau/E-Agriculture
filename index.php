@@ -6,6 +6,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'project');
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +18,7 @@ if (!$conn) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Agriculture</title>
 
-    <link rel="stylesheet" href="agriculture.css">
+    <link rel="stylesheet" href="CSS/index.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -50,8 +51,9 @@ if (!$conn) {
             </p><br><br>
             <!---->
             <h4 class="filterTitle">
-                Choose the tree according to its characteristics.
+            Categories of trees:
             </h4>
+            <!--
             <div class="selectFilters d-flex">
 
                 <div class="form-group">
@@ -82,15 +84,16 @@ if (!$conn) {
                         <option>4</option>
                         <option>5</option>
                     </select>
-                </div>
+                </div>-->
 
 
                 <div class="form-group">
-                    <select class="form-control" id="select1">
+                    <select class="form-control" id="categories">
                         <option selected>Filter</option>
                         <option>Fruit Plant</option>
-                        <option>Vegetable Plant</option>
                         <option>Rooftop Plant</option>
+                        <option>Indoor Plant</option>
+                        <option>Outdoor Plant</option>
                         <option>Flower Plant</option>
                     </select>
                 </div>
@@ -128,12 +131,13 @@ if (!$conn) {
                 // retrieve all products from the database
                 $sql = "SELECT * FROM products";
                 $result = mysqli_query($conn, $sql);
+                // session_start();
 
                 // check if any products were found
                 if (mysqli_num_rows($result) > 0) {
                     // display each product on the page
                     while ($row = mysqli_fetch_assoc($result)) {
-                        $path = "uploads/";
+                        $path = "uploads/products/";
                         $imgName = $row['image'];
                         $src = $path . $imgName;
 
@@ -146,7 +150,7 @@ if (!$conn) {
 
                         echo "<div class='col-lg-3'>";
 
-                        echo "<div class='card mt-2' data-toggle='modal' data-target='#image-modal-" . $row['id'] . "'>";
+                        echo "<div class='card mt-3' data-toggle='modal' data-target='#image-modal-" . $row['id'] . "'>";
                         echo "<img class='card-img-top'  src='" . $src . "' alt='" . $row['name'] . "' width='200' height='200'>";
                         echo "<div class='card-body'>";
                         echo "<div class='card-title'>";
@@ -177,7 +181,8 @@ if (!$conn) {
 
                         echo "<div class='modal-footer'>";
 
-                        echo "<button type='button' class='btn btn-primary' data-dismiss='modal'>Order Now</button>";
+                        echo " <a class='btn btn-primary' href='OrderNow.php?id=".$row['id']."'> Order Now <a/>";
+                        echo " <a class='btn btn-secondary' href='MyCart.php?id=".$row['id']."'> Add to Cart <a/>";
                         echo "<button type='button' class='btn btn-danger' data-dismiss='modal'>Close</button>";
 
                         echo "</div>";

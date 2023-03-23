@@ -84,9 +84,18 @@ if (!isset($_SESSION['ID'])) {
                             <?php
                             // session_start();
                             if (isset($_SESSION['login'])){
-                                echo "<li class='nav-item'>";
-                                echo "<a class='nav-link' href='myAccount.php'>" . 'My Account' . "</a>";
-                                echo "</li>";
+
+                                if ($_SESSION['ID'] == 1){
+                                    echo "<li class='nav-item'>";
+                                    echo "<a class='nav-link' href='DashBoard.php'>" . 'DashBoard' . "</a>";
+                                    echo "</li>";
+                                    }
+                                else{
+                                    echo "<li class='nav-item'>";
+                                    echo "<a class='nav-link' href='myAccount.php'>" . 'My Account' . "</a>";
+                                    echo "</li>";
+                                    }
+                                    
                             }
                             ?>
                             <!-- <li class="nav-item">

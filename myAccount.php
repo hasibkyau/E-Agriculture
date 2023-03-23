@@ -99,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "</div>";
 
                 $accountType = $row['AccountType'];
-                if ($accountType == 'User') {
+                if($accountType == 'User') {
                     echo "<div class='row m-0'>";
                     echo "<p class='mx-auto' style='color:black; font-weight:light; font-size:18px'>" . "User Account "  . "</p>";
                     echo "</div>";

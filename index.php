@@ -20,22 +20,44 @@ if (!$conn) {
 
     <link rel="stylesheet" href="CSS/index.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <?php
     include("nav.php ");
+    ?>
+
+    <?php
+
+    $categories = array('Fruit', 'Flower', 'Vegetables', 'Outdoor', 'Indoor');
+
+    // $category = 'all';
+    // Get the selected category from the request parameters
+    if (isset($_GET['category'])) {
+        $category = mysqli_real_escape_string($conn, $_GET['category']);
+        if (!in_array($category, $categories)) {
+            $category = '';
+        }
+    } else {
+        $category = '';
+    }
+
+    // Build the SQL query
+    if ($category) {
+        echo $category;
+        $sql = "SELECT * FROM products WHERE product_status ='approved' AND category = '$category'";
+    }
+    else{
+        $sql = "SELECT * FROM products WHERE product_status ='approved'";   
+    }
+    $sql .= " ORDER BY name";
+
+    // Execute the query and get the results
+    $result = mysqli_query($conn, $sql);
     ?>
 
 
@@ -51,75 +73,23 @@ if (!$conn) {
             </p><br><br>
             <!---->
             <h4 class="filterTitle">
-            Categories of trees:
+                Categories of trees:
             </h4>
-            <!--
-            <div class="selectFilters d-flex">
 
+            <form action="" method="get">
                 <div class="form-group">
-                    <select class="form-control" id="select1">
-                        <option selected>Trees</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                    <select class="selectpicker" name="category" id="category">
+                        <option value="" selected>All</option>
+                        <?php foreach ($categories as $cat) : ?>
+                            <option value="<?php echo $cat; ?>" <?php echo ($category == $cat) ? 'selected' : ''; ?>><?php echo ucfirst($cat); ?></option>
+                        <?php endforeach; ?>
                     </select>
+                    <input class=" btn-success" type="submit" value="Filter">
                 </div>
+                
+            </form>
 
-                <div class="form-group">
-                    <select class="form-control" id="select1">
-                        <option selected>Seeds</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <select class="form-control" id="select1">
-                        <option selected>More</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>-->
-
-
-                <div class="form-group">
-                    <select class="form-control" id="categories">
-                        <option selected>Filter</option>
-                        <option>Fruit Plant</option>
-                        <option>Rooftop Plant</option>
-                        <option>Indoor Plant</option>
-                        <option>Outdoor Plant</option>
-                        <option>Flower Plant</option>
-                    </select>
-                </div>
-                <!--  
-                <div class="form-group">
-                    <select class="form-control" id="select1">
-                        <option selected>Species</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <select class="form-control" id="select1">
-                        <option selected>Featured</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-                -->
-
-            </div>
+        </div>
         </div>
     </section>
 
@@ -129,8 +99,8 @@ if (!$conn) {
                 <!---->
                 <?php
                 // retrieve all products from the database
-                $sql = "SELECT * FROM products";
-                $result = mysqli_query($conn, $sql);
+                // $sql = "SELECT * FROM products WHERE product_status = 'approved'";
+                // $result = mysqli_query($conn, $sql);
                 // session_start();
 
                 // check if any products were found
@@ -159,7 +129,7 @@ if (!$conn) {
                         // echo "<p>" . $row['description'] . "</p>";
                         echo "<p class='card-text'>" . $cost . "</p>";
                         echo "</div>";
-                        echo "</div>";  
+                        echo "</div>";
 
 
                         // Create a Bootstrap modal for each image
@@ -181,8 +151,8 @@ if (!$conn) {
 
                         echo "<div class='modal-footer'>";
 
-                        echo " <a class='btn btn-primary' href='OrderNow.php?id=".$row['id']."'> Order Now <a/>";
-                        echo " <a class='btn btn-secondary' href='MyCart.php?id=".$row['id']."'> Add to Cart <a/>";
+                        echo " <a class='btn btn-primary' href='OrderNow.php?id=" . $row['id'] . "'> Order Now <a/>";
+                        echo " <a class='btn btn-secondary' href='MyCart.php?id=" . $row['id'] . "'> Add to Cart <a/>";
                         echo "<button type='button' class='btn btn-danger' data-dismiss='modal'>Close</button>";
 
                         echo "</div>";
@@ -191,9 +161,7 @@ if (!$conn) {
                         echo "</div>";
 
                         echo "</div>";
-
                     }
-
                 } else {
                     echo "No products found.";
                 }

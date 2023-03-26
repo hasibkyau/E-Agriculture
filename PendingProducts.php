@@ -42,7 +42,7 @@ $totalPartners = $totalPartners['COUNT(*)'];
 <?php
 
 if (isset($_POST['Approve'])) {
-    echo "This is Approved that is selected";
+    // echo "This is Approved that is selected";
     // header("Location: PendingProducts.php");
     // exit();
     // echo "hello";
@@ -52,8 +52,9 @@ if (isset($_POST['Approve'])) {
     mysqli_query($conn, $sql);
 }
 
+
 if (isset($_POST['Delete'])) {
-    echo "This is Deleted that is selected";
+    // echo "This is Deleted that is selected";
     $id = $_POST['Delete'];
     // global $conn;
     $sql = "DELETE FROM products WHERE id=$id";
@@ -80,19 +81,16 @@ if (isset($_POST['Delete'])) {
 
     <!-- <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script> -->
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script> -->
 
 </head>
 
 <body>
-    <?php
-    include("nav.php ");
-    ?>
 
     <div class="container">
 
         <div class="row my-4">
-            <h1 class="ml-3 text-success">Pending Products</h1>
+            <h1 class="mx-auto ml-3 text-success">Pending Products</h1>
 
         </div>
         <a class="btn btn-danger" href="DashBoard.php">Back</a>
@@ -151,7 +149,7 @@ if (isset($_POST['Delete'])) {
 
                     echo "<form class='row' method='POST' enctype='multipart/form-data'>";
                     echo " <button type='submit' value='" . $row['id'] . "' name='Approve' class='btn btn-success' > Approve<button/>";
-                    echo " <button type='submit' value='" . $row['id'] . "' name='Delete' class='btn btn-secondary' > Decline<button/>";
+                    echo " <button type='submit' value='" . $row['id'] . "' name='Delete' class='btn btn-secondary' > Delete<button/>";
                     echo "<button type='button' class='btn btn-danger' data-dismiss='modal'>Close</button>";
                     echo "</form>";
 
@@ -172,10 +170,6 @@ if (isset($_POST['Delete'])) {
 
         </div>
     </div>
-
-    <?php
-    include("footer.php ");
-    ?>
 </body>
 
 </html>

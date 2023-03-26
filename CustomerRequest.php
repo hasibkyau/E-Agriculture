@@ -7,14 +7,14 @@ if (!isset($_SESSION['ID'])) {
 }
 
 
-if (isset($_POST['Decline'])) {
-    echo "This is Approved that is selected";
-    // header("Location: PendingProducts.php");
+if (isset($_POST['Active'])) {
+    echo "This is Activeed that is selected";
+    // header("Location: ActiveProducts.php");
     // exit();
     // echo "hello";
-    $id = $_POST['Decline'];
+    $id = $_POST['Active'];
     // global $conn;
-    $sql = "UPDATE products SET product_status='pending' WHERE id=$id";
+    $sql = "UPDATE users SET account_status ='active' WHERE ID=$id";
     mysqli_query($conn, $sql);
 }
 
@@ -24,7 +24,7 @@ if (isset($_POST['Delete'])) {
     echo $id . "This is Deleted that is selected";
     
     // global $conn;
-    $sql = "DELETE FROM products WHERE id=$id";
+    $sql = "DELETE FROM users WHERE ID=$id";
     mysqli_query($conn, $sql);
 }
 ?>
@@ -57,7 +57,7 @@ if (isset($_POST['Delete'])) {
     <div class="container">
 
         <div class="row my-4">
-            <h1 class="mx-auto ml-3 text-success">Active Products</h1>
+            <h1 class="mx-auto ml-3 text-success">Customers Requests</h1>
 
         </div>
         <a class="btn btn-danger" href="DashBoard.php">Back</a>
@@ -65,7 +65,8 @@ if (isset($_POST['Delete'])) {
 
             <?php
             // retrieve all products from the database
-            $sql = "SELECT * FROM products WHERE product_status = 'approved'";
+            $sql = "SELECT * FROM users WHERE AccountType = 'User' AND account_status = 'pending'";
+            // $sql = "SELECT * FROM users";
             $result = mysqli_query($conn, $sql);
             // session_start();
 
@@ -74,56 +75,28 @@ if (isset($_POST['Delete'])) {
                 // display each product on the page
                 while ($row = mysqli_fetch_assoc($result)) {
 
-                    $path = "uploads/products/";
-                    $src = $path . $row['image'];
-
-
-                    $see_more = 'See More';
+                    $src = "Resources\Images\male_profile.png";
 
                     echo "<div class='col-lg-3'>";
-
-                    echo "<div class='card mt-3' data-toggle='modal' data-target='#image-modal-" . $row['id'] . "'>";
+                    
+                    echo "<div class='card mt-3'>";
                     // echo "<div class='text-center card-header text-white bg-success'>".$row['name']."</div>";
-                    echo "<img class='card-img-top'  src='" . $src . "' alt='" . $row['name'] . "' width='200' height='200'>";
+                    echo "<img class='card-img-top rounded-circle'  src='" . $src . "' alt='" . $row['FirstName'] . "' width='200' height='200'>";
                     echo "<div class='card-body'>";
                     // echo "<p>" . $row['description'] . "</p>";
-                    echo "<h2 >" . $row['name'] . "</h2>";
-                    echo "<p class='card-text'>" . 'Price: ' . $row['price'] . ' BDT' . "</p>";
-                    echo "</div>";
-
-                    echo "</div>";
-
-
-                    // Create a Bootstrap modal for each image
-                    echo "<div class='modal fade' id='image-modal-" . $row['id'] . "' tabindex='-1' role='dialog' aria-labelledby='image-modal-label-" . $row['id'] . "' aria-hidden='true'>";
-                    echo "<div class='modal-dialog' role='document'>";
-                    echo "<div class='modal-content'>";
-                    echo "<div class='modal-header'>";
-                    echo "<h5 class='modal-title' id='image-modal-label-" . $row['id'] . "'>" . $row['name'] . "</h5>";
-                    echo "<button type='button' class='close' data-dismiss='modal' aria-label='Close'>";
-                    echo "<span aria-hidden='true'>&times;</span>";
-                    echo "</button>";
-                    echo "</div>";
-                    echo "<div class='modal-body'>";
-                    echo "<img src='" . $src . "' alt='" . $row['image'] . "' class='img-fluid'>";
-                    echo "<h2  class='fruit'>" . $row['name'] . "</h2>";
-                    echo "<p>" . $row['description'] . "</p>";
-                    echo "<p class='card-text'>" . 'Price: ' . $row['price'] . ' BDT' . "</p>";
-                    echo "<p class='card-text'>" . 'Seller ID: ' . $row['user_id'] . "</p>";
-                    echo "</div>";
-
-                    echo "<div class='modal-footer'>";
+                    echo "<h2 >" . $row['FirstName']. " " . $row['LastName'] . "</h2>";
+                    echo "<p class='card-text'>" . 'Account Type: ' . $row['AccountType'] . "</p>";
+                    // echo "<p class='card-text'>" . 'Email: ' . $row['EmailAddress'] . "</p>";
 
                     echo "<form class='row' method='POST' enctype='multipart/form-data'>";
-                    echo " <button type='submit' value='" . $row['id'] . "' name='Decline' class='btn btn-success' > Decline<button/>";
-                    echo " <button type='submit' value='" . $row['id'] . "' name='Delete' class='btn btn-secondary' > Delete<button/>";
-                    echo "<button type='button' class='btn btn-danger' data-dismiss='modal'>Close</button>";
+                    echo " <button type='submit' value='" . $row['ID'] . "' name='Active' class='btn btn-success' >" ."Active". "<button/>";
+                    echo " <button type='submit' value='" . $row['ID'] . "' name='Delete' class='btn btn-secondary' >" ."Delete". "<button/>";
                     echo "</form>";
+
 
                     echo "</div>";
                     echo "</div>";
-                    echo "</div>";
-                    echo "</div>";
+
 
                     echo "</div>";
                 }

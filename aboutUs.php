@@ -13,9 +13,9 @@
 </head>
 
 <body>
-<?php
+    <?php
     include("nav.php ");
-?>
+    ?>
 
     <section id="ourMission">
         <div class="container">
@@ -23,44 +23,96 @@
             <h5 class="missionTitle">Plant a Tree, Make a beautyfull World.</h5>
             <h3 class="aboutTitle">About</h3>
             <p class="aboutDetails">
-            Did you know that more than 10 million hectares of trees are cut down every year to accommodate the growing population? Deforestation and forest degradation have weakened the natural ecosystems and endangered nationally treasured species across the globe.
+                Did you know that more than 10 million hectares of trees are cut down every year to accommodate the growing population? Deforestation and forest degradation have weakened the natural ecosystems and endangered nationally treasured species across the globe.
 
-            These trees play a significant role in defending a region against the repercussions of global warming. However, countries like Bangladesh and Pakistan face a forestation deficit – implying imminent dangers such as heavy flooding and water pollution. Moreover, each tree loss leads to deplorable circumstances for the general population and the economy.
+                These trees play a significant role in defending a region against the repercussions of global warming. However, countries like Bangladesh and Pakistan face a forestation deficit – implying imminent dangers such as heavy flooding and water pollution. Moreover, each tree loss leads to deplorable circumstances for the general population and the economy.
             </p>
 
 
             <div class="leaderShip">
-            <h3 class="aboutTitle">Leadership</h3>
-                
+                <h3 class="aboutTitle">Leadership</h3>
+
                 <div class="row">
                     <div class="col-md-6">
                         <div class="leadSingle">
-                           <div class="text-center">
-                            <img class="manik" src="Resources/Images/manik.jpg" alt="user" class="img-fluid user">
-                           </div>
+                            <div class="text-center">
+                                <img class="manik" src="Resources/Images/manik.jpg" alt="user" class="img-fluid user">
+                            </div>
                             <h5 class="userName">Md. Manik Sarkar</h5>
                             <p class="userDescrip">Student of CSE <br> Khwaja Yunus Ali University</p>
                             <p class="userDetails">
                                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum labore ratione nihil officia odit odio quia provident fugit excepturi, deserunt quos maiores optio eaque nisi.
                             </p>
                         </div>
-                        
+
                     </div>
                     <div class="col-md-6">
                         <div class="leadSingle">
                             <div class="text-center">
                                 <img class="manik" src="Resources/Images/lishan.jpg" alt="user" class="img-fluid user">
-                               </div>
+                            </div>
                             <h5 class="userName">Nafiul Islam Lishan</h5>
                             <p class="userDescrip">Student of CSE <br> Khwaja Yunus Ali University</p>
                             <p class="userDetails">
                                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum labore ratione nihil officia odit odio quia provident fugit excepturi, deserunt quos maiores optio eaque nisi.
                             </p>
                         </div>
-                       
+
                     </div>
                 </div>
             </div>
+
+
+            <div class="leaderShip">
+                <h3 class="aboutTitle">Partners</h3>
+
+
+
+                <div class="row">
+                    <?php
+                    // retrieve all products from the database
+                    $sql = "SELECT * FROM users WHERE AccountType != 'User' AND account_status = 'active'";
+                    // $sql = "SELECT * FROM users";
+                    $result = mysqli_query($conn, $sql);
+                    // session_start();
+
+                    // check if any products were found
+                    if (mysqli_num_rows($result) > 0) {
+                        // display each product on the page
+                        while ($row = mysqli_fetch_assoc($result)) {
+
+                            $src = "Resources\Images\male_profile.png";
+
+                            echo "<div class='col-md-6'>";
+                            echo "<div class='leadSingle'>";
+
+                            echo "<div class='text-center'>";
+                            // echo "<div class='text-center card-header text-white bg-success'>".$row['name']."</div>";
+                            echo "<img class='img-fluid user manik'  src='" . $src . "' alt='" . $row['FirstName'] . "' width='200' height='200'>";
+                            echo "<div class='card-body'>";
+                            // echo "<p>" . $row['description'] . "</p>";
+                            echo "<h2 >" . $row['FirstName'] . " " . $row['LastName'] . "</h2>";
+                            echo "<p class='card-text'>" . 'Phone: ' . $row['PhoneNumber'] . "</p>";
+                            // echo "<p class='card-text'>" . 'Email: ' . $row['EmailAddress'] . "</p>";
+
+                            echo "</div>";
+                            echo "</div>";
+                            echo "</div>";
+
+
+                            echo "</div>";
+                        }
+                    } else {
+                        echo "No products found.";
+                    }
+
+                    // close the database connection
+                    mysqli_close($conn);
+                    ?>
+                </div>
+            </div>
+
+
         </div>
     </section>
 

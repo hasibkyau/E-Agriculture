@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2023 at 05:38 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Mar 26, 2023 at 08:21 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,25 +39,26 @@ CREATE TABLE `orders` (
   `email_address` varchar(50) NOT NULL,
   `phone_number` int(11) NOT NULL,
   `payment_option` varchar(50) NOT NULL,
-  `order_date` timestamp NOT NULL DEFAULT current_timestamp()
+  `order_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `order_status` varchar(20) NOT NULL DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `customer_id`, `product_id`, `product_name`, `price`, `quantity`, `total_price`, `delivery_address`, `email_address`, `phone_number`, `payment_option`, `order_date`) VALUES
-(1, 17, 1, 'mango', 120, 1, '120', 'Sirajganj, Bangladesh', 'himel@gmail.com', 1856985874, 'Cash on Delivery', '2023-03-19 11:51:53'),
-(4, 1, 4, 'Boroi', 30, 2, '6000', 'Enayetpur,Sirajganj', 'lishanboss121@gmail.com', 1811561101, 'Online Payment', '2023-03-19 11:55:14'),
-(6, 16, 4, 'Boroi', 30, 4, '12000', 'Ajugora, Enayetpur, Sirajganj', 'merina@gmail.com', 1758696985, 'Online Payment', '2023-03-19 11:56:32'),
-(7, 16, 5, 'Begun', 30, 3, '9000', 'Ajugora, Enayetpur, Sirajganj', 'merina@gmail.com', 1758696985, 'Cash on Delivery', '2023-03-19 11:56:41'),
-(8, 17, 2, 'Mango', 140, 1, '140', 'Sirajganj,', 'himel@gmail.com', 1856985874, 'Online Payment', '2023-03-19 14:55:35'),
-(9, 19, 2, 'Mango', 140, 1, '140', 'Barishal', 'rofikhasan@gtmail.com', 1745325687, 'Online Payment', '2023-03-20 08:10:37'),
-(10, 20, 2, 'Orange Tree', 140, 1, '140', 'sirajganj', 'maniksarkar934@gmail.com', 1791492957, 'Cash on Delivery', '2023-03-20 18:38:40'),
-(11, 20, 21, 'Apple Tree', 650, 1, '650', 'sirajganj,shahzadpur', 'maniksarkar934@gmail.com', 1791492957, 'Online Payment', '2023-03-20 18:39:31'),
-(12, 20, 21, 'Apple Tree', 650, 1, '650', 'sirajganj', 'maniksarkar934@gmail.com', 1791492957, 'Cash on Delivery', '2023-03-20 18:41:48'),
-(13, 20, 22, 'Guava Tree', 180, 1, '180', 'sirajganj', 'maniksarkar934@gmail.com', 1791492957, 'Cash on Delivery', '2023-03-20 18:41:58'),
-(14, 20, 4, 'Litchi Tree', 230, 1, '230', 'sirajganj', 'maniksarkar934@gmail.com', 1791492957, 'Online Payment', '2023-03-20 18:42:13');
+INSERT INTO `orders` (`id`, `customer_id`, `product_id`, `product_name`, `price`, `quantity`, `total_price`, `delivery_address`, `email_address`, `phone_number`, `payment_option`, `order_date`, `order_status`) VALUES
+(1, 17, 1, 'mango', 120, 1, '120', 'Sirajganj, Bangladesh', 'himel@gmail.com', 1856985874, 'Cash on Delivery', '2023-03-19 11:51:53', 'pending'),
+(4, 1, 4, 'Boroi', 30, 2, '6000', 'Enayetpur,Sirajganj', 'lishanboss121@gmail.com', 1811561101, 'Online Payment', '2023-03-19 11:55:14', 'pending'),
+(6, 16, 4, 'Boroi', 30, 4, '12000', 'Ajugora, Enayetpur, Sirajganj', 'merina@gmail.com', 1758696985, 'Online Payment', '2023-03-19 11:56:32', 'pending'),
+(7, 16, 5, 'Begun', 30, 3, '9000', 'Ajugora, Enayetpur, Sirajganj', 'merina@gmail.com', 1758696985, 'Cash on Delivery', '2023-03-19 11:56:41', 'pending'),
+(8, 17, 2, 'Mango', 140, 1, '140', 'Sirajganj,', 'himel@gmail.com', 1856985874, 'Online Payment', '2023-03-19 14:55:35', 'pending'),
+(9, 19, 2, 'Mango', 140, 1, '140', 'Barishal', 'rofikhasan@gtmail.com', 1745325687, 'Online Payment', '2023-03-20 08:10:37', 'pending'),
+(10, 20, 2, 'Orange Tree', 140, 1, '140', 'sirajganj', 'maniksarkar934@gmail.com', 1791492957, 'Cash on Delivery', '2023-03-20 18:38:40', 'pending'),
+(11, 20, 21, 'Apple Tree', 650, 1, '650', 'sirajganj,shahzadpur', 'maniksarkar934@gmail.com', 1791492957, 'Online Payment', '2023-03-20 18:39:31', 'pending'),
+(12, 20, 21, 'Apple Tree', 650, 1, '650', 'sirajganj', 'maniksarkar934@gmail.com', 1791492957, 'Cash on Delivery', '2023-03-20 18:41:48', 'pending'),
+(13, 20, 22, 'Guava Tree', 180, 1, '180', 'sirajganj', 'maniksarkar934@gmail.com', 1791492957, 'Cash on Delivery', '2023-03-20 18:41:58', 'pending'),
+(14, 20, 4, 'Litchi Tree', 230, 1, '230', 'sirajganj', 'maniksarkar934@gmail.com', 1791492957, 'Online Payment', '2023-03-20 18:42:13', 'pending');
 
 --
 -- Indexes for dumped tables

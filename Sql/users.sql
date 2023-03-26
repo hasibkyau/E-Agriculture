@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2023 at 05:38 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Mar 26, 2023 at 08:20 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,21 +37,21 @@ CREATE TABLE `users` (
   `Gender` text NOT NULL,
   `AccountType` enum('Admin','User') NOT NULL,
   `Password` varchar(255) NOT NULL,
-  `UserAddress` varchar(255) NOT NULL
+  `UserAddress` varchar(255) NOT NULL,
+  `account_status` varchar(20) NOT NULL DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`ID`, `Date`, `FirstName`, `LastName`, `EmailAddress`, `PhoneNumber`, `Gender`, `AccountType`, `Password`, `UserAddress`) VALUES
-(1, '2023-03-16 08:02:48', 'Ahmed', 'Nafi', 'lishanboss121@gmail.com', '1811561101', 'Male', '', '12345', 'Pabna'),
-(15, '2023-03-16 09:48:53', 'lishan', 'bhuiyan', 'lishanbogfdgss121@gmail.com', '1811561101', 'Male', 'Admin', 'aaaaa', 'Dhaka'),
-(16, '2023-03-19 07:13:08', 'Merina', 'Khatun', 'merina@gmail.com', '01758696985', 'Female', 'User', '123456', 'Ajugora, Enayetpur, Sirajganj'),
-(17, '2023-03-19 09:10:27', 'Himel', 'Rana', 'himel@gmail.com', '01856985874', 'Male', '', '123456', 'Sirajganj,'),
-(18, '2023-03-20 05:30:51', 'mehedi ', 'hasan', 'mehedicse330@gmail.com', '01776087433', 'Male', 'User', 'mehedi12345', 'Natore'),
-(19, '2023-03-20 06:08:28', 'Rofikul', 'Islam', 'rofikhasan@gtmail.com', '01745325687', 'Male', '', '654321', 'Barishal'),
-(20, '2023-03-20 14:52:44', 'Manik', 'Sarkar', 'maniksarkar934@gmail.com', '01791492957', 'Male', 'User', 'manik123', 'sirajganj');
+INSERT INTO `users` (`ID`, `Date`, `FirstName`, `LastName`, `EmailAddress`, `PhoneNumber`, `Gender`, `AccountType`, `Password`, `UserAddress`, `account_status`) VALUES
+(1, '2023-03-16 08:02:48', 'Tree', 'Zone', 'plant.admin@gmail.com', '1811561101', 'Male', 'User', 'admin1234', 'Enayetpur, Sirajganj', 'active'),
+(15, '2023-03-16 09:48:53', 'lishan', 'bhuiyan', 'lishanbogfdgss121@gmail.com', '1811561101', 'Male', 'Admin', 'aaaaa', 'Dhaka', 'active'),
+(16, '2023-03-19 07:13:08', 'Merina', 'Khatun', 'merina@gmail.com', '01758696985', 'Female', 'User', '123456', 'Ajugora, Enayetpur, Sirajganj', 'active'),
+(17, '2023-03-19 09:10:27', 'Himel', 'Rana', 'himel@gmail.com', '01856985874', 'Male', '', '123456', 'Sirajganj,', 'active'),
+(19, '2023-03-20 06:08:28', 'Rofikul', 'Islam', 'rofikhasan@gtmail.com', '01745325687', 'Male', '', '654321', 'Barishal', 'active'),
+(20, '2023-03-20 14:52:44', 'Manik', 'Sarkar', 'maniksarkar934@gmail.com', '01791492957', 'Male', 'User', 'manik123', 'sirajganj', 'active');
 
 --
 -- Indexes for dumped tables

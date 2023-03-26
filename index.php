@@ -50,13 +50,21 @@ if (!$conn) {
     if ($category) {
         echo $category;
         $sql = "SELECT * FROM products WHERE product_status ='approved' AND category = '$category'";
-    }
-    else{
-        $sql = "SELECT * FROM products WHERE product_status ='approved'";   
+    } else {
+        $sql = "SELECT * FROM products WHERE product_status ='approved'";
     }
     $sql .= " ORDER BY name";
 
     // Execute the query and get the results
+   
+
+
+    if (isset($_GET['search'])) {
+        $search =  $_GET['search'];
+        echo $search;
+        $sql = "SELECT * FROM products WHERE product_status ='approved' AND name LIKE '%$search%' OR description LIKE '%$search%'";
+
+    } 
     $result = mysqli_query($conn, $sql);
     ?>
 
@@ -72,22 +80,47 @@ if (!$conn) {
                 you love. Plant a tree, let's green the planet!
             </p><br><br>
             <!---->
-            <h4 class="filterTitle">
-                Categories of trees:
-            </h4>
 
-            <form action="" method="get">
-                <div class="form-group">
-                    <select class="selectpicker" name="category" id="category">
-                        <option value="" selected>All</option>
-                        <?php foreach ($categories as $cat) : ?>
-                            <option value="<?php echo $cat; ?>" <?php echo ($category == $cat) ? 'selected' : ''; ?>><?php echo ucfirst($cat); ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                    <input class=" btn-success" type="submit" value="Filter">
+
+            <div class="row">
+                <div class="col-6">
+
+
+                    
+                    <form action="" method="get">
+                        <div class="input-group">
+                        <label class="form-label" for="form1"></label>
+                            <select class="form-control" name="category" id="category">
+                                <option value="" selected>All</option>
+                                <?php foreach ($categories as $cat) : ?>
+                                    <option value="<?php echo $cat; ?>" <?php echo ($category == $cat) ? 'selected' : ''; ?>><?php echo ucfirst($cat); ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                            <input class=" btn-success" type="submit" value="Filter">
+                        </div>
+
+                    </form>
+
                 </div>
-                
-            </form>
+
+                <div class="col-6">
+                    <form action="" method="get">
+                        <div class="input-group">
+                            <label class="form-label d-flex" for="form1"></label>
+                            <input type="search" name="search" id="search" class="form-control" />
+                            <!-- <input class=" btn-success" type="submit" value="Filter"> -->
+
+                            <button type="submit" value="search" type="button" class="btn">
+                                <!-- <i class="fas fa-search">Search</i> -->
+                                <img src="Resources/Images/search.png" alt="search" class="img-fluid search" data-toggle="modal" data-target="#exampleModalCenter">
+                            </button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
 
         </div>
         </div>

@@ -89,6 +89,10 @@ if (!isset($_SESSION['ID'])) {
                                     echo "<li class='nav-item'>";
                                     echo "<a class='nav-link' href='DashBoard.php'>" . 'DashBoard' . "</a>";
                                     echo "</li>";
+
+                                    echo "<li class='nav-item' id='Partner'>";
+                                    echo "<a class='nav-link' href='partner.php'>" . 'Partner' . "</a>";
+                                    echo "</li>";
                                     }
                                 else{
                                     echo "<li class='nav-item'>";
@@ -101,9 +105,9 @@ if (!isset($_SESSION['ID'])) {
                             <!-- <li class="nav-item">
                                 <a class="nav-link" href="myAccount.php">My Account</a>
                             </li> -->
-                            <li id="Partner" class="nav-item">
+                            <!-- <li id="Partner" class="nav-item">
                                 <a class="nav-link" href="partner.php">Partner</a>
-                            </li>
+                            </li> -->
 
                         </ul>
                         <form class="form-inline my-2  my-lg-0">

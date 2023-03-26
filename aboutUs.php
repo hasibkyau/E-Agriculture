@@ -63,55 +63,7 @@
             </div>
 
 
-            <div class="leaderShip">
-                <h3 class="aboutTitle">Partners</h3>
-
-
-
-                <div class="row">
-                    <?php
-                    // retrieve all products from the database
-                    $sql = "SELECT * FROM users WHERE AccountType != 'User' AND account_status = 'active'";
-                    // $sql = "SELECT * FROM users";
-                    $result = mysqli_query($conn, $sql);
-                    // session_start();
-
-                    // check if any products were found
-                    if (mysqli_num_rows($result) > 0) {
-                        // display each product on the page
-                        while ($row = mysqli_fetch_assoc($result)) {
-
-                            $src = "Resources\Images\male_profile.png";
-
-                            echo "<div class='col-md-6'>";
-                            echo "<div class='leadSingle'>";
-
-                            echo "<div class='text-center'>";
-                            // echo "<div class='text-center card-header text-white bg-success'>".$row['name']."</div>";
-                            echo "<img class='img-fluid user manik'  src='" . $src . "' alt='" . $row['FirstName'] . "' width='200' height='200'>";
-                            echo "<div class='card-body'>";
-                            // echo "<p>" . $row['description'] . "</p>";
-                            echo "<h2 >" . $row['FirstName'] . " " . $row['LastName'] . "</h2>";
-                            echo "<p class='card-text'>" . 'Phone: ' . $row['PhoneNumber'] . "</p>";
-                            // echo "<p class='card-text'>" . 'Email: ' . $row['EmailAddress'] . "</p>";
-
-                            echo "</div>";
-                            echo "</div>";
-                            echo "</div>";
-
-
-                            echo "</div>";
-                        }
-                    } else {
-                        echo "No products found.";
-                    }
-
-                    // close the database connection
-                    mysqli_close($conn);
-                    ?>
-                </div>
-            </div>
-
+            
 
         </div>
     </section>

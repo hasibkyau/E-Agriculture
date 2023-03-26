@@ -98,6 +98,10 @@ if (!isset($_SESSION['ID'])) {
                                     echo "<li class='nav-item'>";
                                     echo "<a class='nav-link' href='myAccount.php'>" . 'My Account' . "</a>";
                                     echo "</li>";
+
+                                    echo "<li class='nav-item'>";
+                                    echo "<a class='nav-link' href='MyCart.php'>" . 'My Cart' . "</a>";
+                                    echo "</li>";
                                     }
                                     
                             }

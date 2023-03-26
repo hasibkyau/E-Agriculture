@@ -34,7 +34,7 @@
         if (mysqli_num_rows($result) > 0) {
           // display each product on the page
           while ($row = mysqli_fetch_assoc($result)) {
-            echo "<div class='col-md-6'>";
+            echo "<div class='col-md-12'>";
             echo " <div class='questions'>";
             echo " <div class='accordion' id='accordionExample'>";
 

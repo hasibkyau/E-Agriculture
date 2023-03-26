@@ -1,8 +1,12 @@
 <?php
-require_once("connect.php");
-if (!isset($_SESSION['ID'])) {
-    session_start();
-}
+
+    require_once("connect.php");
+    if (!isset($_SESSION['ID'])) {
+        session_start();}
+?>
+
+<?php
+
 
 $conn = mysqli_connect('localhost', 'root', '', 'project');
 

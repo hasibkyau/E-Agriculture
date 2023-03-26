@@ -68,12 +68,14 @@ if (!$conn) {
     $result = mysqli_query($conn, $sql);
 
     if (isset($_GET['AddToCart'])){
-        $product_id = $_GET['AddToCart'];
-        $customer_id = $_SESSION['ID'];
-        // echo $customer_id;
-        $query = "INSERT INTO cart (customer_id, product_id) VALUES ($customer_id, $product_id);";
-        mysqli_query($conn, $query);
 
+        if(isset($_SESSION['ID'])){
+            $product_id = $_GET['AddToCart'];
+            $customer_id = $_SESSION['ID'];
+            // echo $customer_id;
+            $query = "INSERT INTO cart (customer_id, product_id) VALUES ($customer_id, $product_id);";
+            mysqli_query($conn, $query);
+        }
     }
     ?>
 
@@ -192,8 +194,12 @@ if (!$conn) {
                         echo "</div>";
 
                         echo " <form class='form-group mx-auto'  method='get'>";
-                        echo "   <button name='AddToCart' type='submit' value='". $row['id']."' type='button' class='btn btn-secondary'>Add to Cart</button>";
-                        echo "</form>";
+                        if(isset($_SESSION['ID'])){
+                            echo "   <button name='AddToCart' type='submit' value='". $row['id']."' type='button' class='btn btn-secondary'>Add to Cart</button>";
+                            echo " <a class='btn btn-primary' href='gift.php?id=" . $row['id'] . "'> Gift <a/>";
+                            echo "</form>";
+                        }
+
 
                         echo "<div class='modal-footer'>";
 

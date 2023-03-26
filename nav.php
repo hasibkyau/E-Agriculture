@@ -64,9 +64,9 @@ if (!isset($_SESSION['ID'])) {
                             </div>
                             </div>
                             -->
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" href="gift.php">Gift</a>
-                            </li>
+                            </li> -->
                             <li class="nav-item">
                                 <a class="nav-link" href="benifits.php">Benifits</a>
                             </li>

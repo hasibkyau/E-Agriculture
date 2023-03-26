@@ -52,6 +52,11 @@ $blockedPartners = $blockedPartners['COUNT(*)'];
 $PartnerRequest = mysqli_query($conn, "SELECT COUNT(*) FROM users WHERE AccountType != 'User' AND account_status = 'pending'")->fetch_assoc();
 $PartnerRequest = $PartnerRequest['COUNT(*)'];
 
+
+$messages = mysqli_query($conn, "SELECT COUNT(*) FROM faq")->fetch_assoc();
+$messages = $messages['COUNT(*)'];
+
+
 // check if any products were found
 // if (mysqli_num_rows($result) > 0) {
 //     $row = mysqli_fetch_assoc($result);
@@ -89,7 +94,7 @@ $PartnerRequest = $PartnerRequest['COUNT(*)'];
 
             <div class="col-3">
 
-                <a class="d-flex btn btn-success border" href="addproduct.php">Messages</a>
+                <a class="d-flex btn btn-success border" href="Messages.php">Messages</a>
                 <a class="d-flex btn btn-success border" href="ActiveProducts.php">Active Products</a>
                 <a class="d-flex btn btn-success border" href="PendingProducts.php">Pending Products</a>
                 <a class="d-flex btn btn-success border" href="ActiveCustomer.php">Active Customers</a>
@@ -105,11 +110,11 @@ $PartnerRequest = $PartnerRequest['COUNT(*)'];
 
 
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                        <a class="nav-link m-0 p-0" href="ActiveProducts.php">
+                        <a class="nav-link m-0 p-0" href="Messages.php">
                             <div class="card  mb-3">
-                                <div class="text-center card-header text-white bg-success">Messages</div>
+                                <div class="text-center card-header text-white bg-success">FAQ</div>
                                 <div class="card-body border">
-                                    <h1 class="card-text text-center"><?php echo $activeProducts ?></h1>
+                                    <h1 class="card-text text-center"><?php echo $messages ?></h1>
                                 </div>
                             </div>
                         </a>

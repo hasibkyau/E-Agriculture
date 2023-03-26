@@ -1,57 +1,13 @@
 <?php
 require_once("connect.php");
 
-    $sql = "select *from users ORDER BY id DESC LIMIT 1";
-    //$sql = "select *from login_user";
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_assoc($result);
-    //echo " " . $row["ID"]; 
 
-    $id = $row["ID"];
-    $sql = "SELECT * FROM users WHERE ID = '$id'";
-    $result = mysqli_query($conn, $sql);
-    $r = mysqli_fetch_assoc($result);
-
-    $_SESSION['login'] = 1;
-    $_SESSION['ID'] = $r["ID"];
-    $_SESSION['FirstName'] = $r["FirstName"];
-    $_SESSION['LastName'] = $r["LastName"];
-    $name = $_SESSION['FirstName'];
-    $id = $_SESSION['ID'];
-    $_SESSION['EmailAddress'] = $r["EmailAddress"];
-    $_SESSION['PhoneNumber'] = $r["PhoneNumber"];
-    $_SESSION['Gender'] = $r["Gender"];
-    $_SESSION['AccountType'] = $r["AccountType"];
-    $_SESSION['UserAddress'] = $r["UserAddress"];
+if (!isset($_SESSION['ID'])) {
+    session_start();
+}
 
 ?>
 
-<?php
-  if(isset($_POST['login']))
-	{
-		
- 		$ID = $_POST['ID'];
-  		$UserPassword = $_POST['UserPassword'];
-
-   if(!empty($ID) and !empty($UserPassword))
-   {
-     $sql = "SELECT * FROM user_info WHERE ID = '$ID' AND UserPassword = '$UserPassword'";
-
-     if($result = mysqli_query($conn, $sql)){
-         if(mysqli_num_rows($result) > 0){
-            $in = "INSERT INTO login_user(`ID`) VALUES ('$ID')";      
-		    mysqli_query($conn,$in);		 
-            header("Location:profile.php");
-         }
-         else
-            echo "invalid id or password";
-         
-     }
-   }
-
-  }
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -60,9 +16,9 @@ require_once("connect.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Agriculture</title>
+    <title>E-Tree Zone</title>
 
-    <link rel="stylesheet" href="agriculture.css">
+    <link rel="stylesheet" href="CSS/index.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -81,10 +37,11 @@ require_once("connect.php");
 
     <header id="header" class="sticky-top">
         <div class="container-fluid px-md-0">
+        <h2 style="font-weight:bold; font-size:30px !important;">PLANT A TREE</h2>
             <div class="mainNav">
                 <nav class="navbar navbar-expand-lg">
                     <a class="navbar-brand" href="#">
-                        <img src="1.jpg" alt="" class="img-fluid">
+                        <img src="Resources/Images/Logo.jpg" alt="" class="img-fluid">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
@@ -107,37 +64,70 @@ require_once("connect.php");
                             </div>
                             </div>
                             -->
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="gift.php">Gift</a>
+                            </li> -->
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Gift</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Benifits</a>
+                                <a class="nav-link" href="benifits.php">Benifits</a>
                             </li>
                             <!----------- About Us----------->
                             <!--
                             <div class="dropdown-container">
                                 -->
                             <li class="nav-item">
-                                <a class=" nav-link" href="#">About Us</a>
+                                <a class=" nav-link" href="aboutUs.php">About Us</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Ask/Quote</a>
+                                <a class="nav-link" href="askQuote.php">Ask/Quote</a>
                             </li>
-        
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">My Account</a>
-                            </li>
-                            <li id="Partner" class="nav-item">
+                            <?php
+                            // session_start();
+                            if (isset($_SESSION['login'])){
+
+                                if ($_SESSION['ID'] == 1){
+                                    echo "<li class='nav-item'>";
+                                    echo "<a class='nav-link' href='DashBoard.php'>" . 'DashBoard' . "</a>";
+                                    echo "</li>";
+
+                                    echo "<li class='nav-item' id='Partner'>";
+                                    echo "<a class='nav-link' href='partner.php'>" . 'Partner' . "</a>";
+                                    echo "</li>";
+                                    }
+                                else{
+                                    echo "<li class='nav-item'>";
+                                    echo "<a class='nav-link' href='myAccount.php'>" . 'My Account' . "</a>";
+                                    echo "</li>";
+
+                                    echo "<li class='nav-item'>";
+                                    echo "<a class='nav-link' href='MyCart.php'>" . 'My Cart' . "</a>";
+                                    echo "</li>";
+                                    }
+                                    
+                            }
+                            ?>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="myAccount.php">My Account</a>
+                            </li> -->
+                            <!-- <li id="Partner" class="nav-item">
                                 <a class="nav-link" href="partner.php">Partner</a>
-                            </li>
+                            </li> -->
 
                         </ul>
                         <form class="form-inline my-2  my-lg-0">
 
-                            <img src="search.png" alt="search" class="img-fluid search" data-toggle="modal"
-                                data-target="#exampleModalCenter">
-                            <a class="nav-link" id="loginBtn" href="login.php">Log In</a>
+                            <!-- <img src="Resources/Images/search.png" alt="search" class="img-fluid search"
+                                data-toggle="modal" data-target="#exampleModalCenter">
+                            <a class="nav-link" id="loginBtn" href="login.php">Log In</a> -->
+                            <?php
+                            if (isset($_SESSION['login'])){
+                                echo "<a class='nav-link' id='loginBtn'  href='logout.php'>" . 'Logout' . "</a>";
+                            }
+                            else{
+                                echo "<a class='nav-link' id='loginBtn'  href='login.php'>" . 'Log In' . "</a>";
+                            }
+                            ?>
+                            <!-- <a class="nav-link" href="logout.php">Logout</a> -->
                         </form>
                     </div>
                 </nav>
@@ -176,11 +166,11 @@ require_once("connect.php");
         var id = "<?php echo "$id" ?>";
         if (id) {
             document.getElementById("loginBtn").innerHTML = "Login";
-            document.getElementById("loginBtn").href="login.php";
+            document.getElementById("loginBtn").href = "login.php";
 
         } else {
             document.getElementById("loginBtn").innerHTML = "Logout";
-            document.getElementById("loginBtn").href="index.php";
+            document.getElementById("loginBtn").href = "index.php";
         }
 
     </script>

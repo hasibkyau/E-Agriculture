@@ -3,101 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
+    <link rel="stylesheet" href="CSS/registration.css">
 
-    <style>
-        #Registrationform {
-            width: 500px;
-            height: 850px;
-
-            box-shadow: rgba(9, 30, 66, 0.25) 0px 8px 12px -2px,
-                rgba(184, 189, 198, 0.25) 0px 5px 20px 20px;
-            margin: 20px 400px;
-            border-radius: 15px;
-            font-size: 15px;
-            color: white;
-
-        }
-
-        li {
-            list-style: none;
-            float: left;
-            margin-left: 10px;
-            font-size: 20px;
-            color: black;
-
-        }
-
-        .head {
-            width: 380px;
-            height: 40px;
-            padding: 1px;
-            font-size: 32px;
-            color: orange;
-            text-align: center;
-            border: 2px solid orange;
-            margin-left: 40px;
-            margin-top: 40px;
-            border-radius: 10px;
-            font-family: 'Times New Roman';
-            position: relative;
-            top: 30px;
-        }
-
-        .styl {
-            width: 380px;
-            height: 40px;
-            border-radius: 3px;
-            font-size: 20px;
-            border: 1px solid orange;
-            margin-top: 7px;
-            margin-left: 40px;
-            border-bottom: 2px solid orange;
-            background: transparent;
-
-        }
-
-        .styl::placeholder {
-            font-style: italic;
-            font-size: 15px;
-        }
-
-        label {
-            font-weight: bold;
-            margin-left: 40px;
-            font-size: 23px;
-            color: green;
-        }
-
-        #para {
-            margin-left: 40px;
-            width: 380px;
-            text-align: center;
-            color: rgb(120, 157, 179);
-            font-size: 20px;
-            margin-top: 5px;
-
-        }
-
-        .sub {
-            width: 210px;
-            height: 35px;
-            border-radius: 18px;
-            border: 1px solid blue;
-            background-color: blue;
-            color: white;
-            font-size: 20px;
-            margin-top: 7px;
-            margin-right: 5px;
-            color: greenyellow;
-        }
-
-        .sub:hover {
-            background: skyblue;
-            color: red;
-        }
-    </style>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 
 </head>
 
@@ -172,7 +93,7 @@
         <input class="styl" type="tel" id="phoneNumber" name="phoneNumber" required><br>
 
 
-        <label for="gender">Gender:</label>
+        <label for="gender">Gender:</label><br>
         <select id="gender" name="gender" required>
             <option value="">Select Gender</option>
             <option value="Male">Male</option>
@@ -180,10 +101,10 @@
             <option value="Other">Other</option>
         </select><br>
 
-        <label for="accountType">Account Type:</label>
+        <label for="accountType">Account Type:</label><br>
         <select id="accountType" name="accountType" required>
             <option value="">Select Account Type</option>
-            <option value="Admin">Admin</option>
+            <option value="Partner">Partner</option>
             <option value="User">User</option>
         </select><br>
 
@@ -193,20 +114,10 @@
         <label for="userAddress">Address:</label>
         <input class="styl" type="text" id="userAddress" name="userAddress" required><br>
 
-        <!-- <label for="account_type">Account Type</label><br>
-        <ul>
-            <li><input class="gndr" type="radio" name="account_type" id="gen" value="Customer">Customer</li>
-            <li><input class="gndr" type="radio" name="account_type" id="gen" value="Partner">Partner</li>
-            <br><br>
-        </ul> -->
-
-        <!-- <label for="address">Address</label><br>
-        <input class="styl" type="text" name="address" id="address" placeholder="Enter Your address"><br><br> -->
-
         <p id="para">By proceeding with the registration I confirm that I have read and accept the Terms and
             Conditions.<br><br>
-            <span><a class="fp" href="index.php">Cancel</a></span><br>
-            <input type="submit" value="Submit"><br><br>
+            <input class="sub" type="submit" value="Submit"><br>
+            <a class="Cancel" href="index.php">Cancel</a><br>
         </p>
     </form>
 </body>

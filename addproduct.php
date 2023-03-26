@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product</title>
-    <link rel="stylesheet" href="addproduct.css">
+    <link rel="stylesheet" href="CSS/addproduct.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -36,12 +36,12 @@
         $type = $_POST['type'];
         $quantity = $_POST['quantity'];
 
-        $target_dir = "uploads/";
+        $target_dir = "uploads/products/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
         $new_filename = uniqid() . "." . $imageFileType;
         $target_path = $target_dir . $new_filename;
-
+        
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_path)) {
             $conn = mysqli_connect('localhost', 'root', '', 'project');
 
@@ -65,24 +65,45 @@
 
 
     <section>
-        <div class="addproductsystem">
-            <h1 id="APIPIS"> Input system for upload tree or any product</h1>
-            <div class="addproduct">
-                <h4 id="padd">Add Product</h4>
+        <div class="container mb-6">
+            <!-- <h1 id="APIPIS"> Input system for upload tree or any product</h1> -->
+            <div class="row">
+                <h2 class=" head mx-auto m-5">Add Product</h2>
+            </div>
 
-                <form method="POST" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-6">
 
-                    <label class="style" for=""> Product Name*</label><br>
-                    <input class="PNstyle" type="text" name="name"><br>
 
-                    <label class="style" for="">Photo of Product*</label><br>
-                    <input class="PPstyle" type="file" name="image"><br>
+                    <form method="POST" enctype="multipart/form-data">
 
-                    <label class="style" for="">Products Description*</label><br>
-                    <textarea class="PDstyle" name="description"></textarea><br>
+                        <div class="form-group">
+                            <label id="style"class="font-weight-bold text-dark" for="product_name">Product Name*</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="name"
+                                placeholder="Enter Product Name" required>
+                        </div>
 
-                    <label class="style" for="">Product Type*</label><br>
-                    <select class="options" name="type">
+                        <div class="form-group">
+                            <label id="style"class="font-weight-bold text-dark mt-2" for="">Products Description*</label><br>
+                            <input class="form-control" name="description" required><br>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label id="style" class="font-weight-bold text-dark" for="">Product Photo*</label><br>
+                            <input class="form-control" type="file" name="image" required><br>
+                        </div>
+
+                        <button class="btn btn-primary" type="submit" value="Submit">Add Product</button><br><br>
+                        <!-- </form> -->
+                </div>
+
+
+
+                <div class="col-6">
+
+                    <label id="style" class="font-weight-bold text-dark" for="">Product Type*</label><br>
+                    <select class="form-control options" name="type" required>
                         <option value="Fruit">Fruit</option>
                         <option value="Flower">Flower</option>
                         <option value="Seedling">Seedling</option>
@@ -90,22 +111,31 @@
                         <option value="Vegetables">Vegetables</option>
                         <option value="Organic Fertilizer">Organic Fertilizer</option>
                         <option value="Chemical Fertilizer">Chemical Fertilizer</option>
-                    </select><br><br>
+                    </select><br>
 
-                    <label class="style" for="">Products Price*</label><br>
-                    <input class="PCstyle" type="text" name="price"><br>
-
-
-                    <label class="style" for="">Products Quantity*</label><br>
-                    <input class="PQstyle" type="number" name="quantity"><br>
+                    <div class="form-group">
+                        <label id="style" class="font-weight-bold text-dark" for="">Products Price*</label><br>
+                        <input class="form-control" type="text" name="price" required><br>
+                    </div>
 
 
-                    <input class="sub" type="submit" value="Submit">
-                </form>
+                    <div class="form-group">
+                        <label id="style" class="font-weight-bold text-dark" for="">Products Quantity*</label><br>
+                        <input class="form-control" type="number" name="quantity" required><br>
+                    </div>
+
+                    </form>
+                </div>
             </div>
+
+
         </div>
 
-    </section>
+</section>
+
+<?php
+    include("footer.php ");
+    ?>
 
 </body>
 

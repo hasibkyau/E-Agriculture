@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="CSS/login.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -46,24 +46,30 @@
 
         if ($result->num_rows > 0) {
             echo "Login successful.";
+            $sql = "SELECT * FROM users WHERE EmailAddress = '$emailAddress' AND Password = '$password'";
+            $result = mysqli_query($conn, $sql);
+            $user = mysqli_fetch_assoc($result);
+            echo $user['ID'];
 
             $stmt->execute();
 
-            $_SESSION['login'] = 1;	
-			$_SESSION['ID'] = $rows["ID"];					
-			$_SESSION['FirstName'] = $rows["FirstName"];
-			$_SESSION['LastName'] = $rows["LastName"];
-			$_SESSION['EmailAddress'] = $rows["EmailAddress"];
-			$_SESSION['PhoneNumber'] = $rows["PhoneNumber"];
-			$_SESSION['Gender'] = $rows["Gender"];
-            $_SESSION['AccountType'] = $rows["AccountType"];
-            $_SESSION['UserAddress'] = $rows["UserAddress"];
+            session_destroy();
+            session_start();
+            $_SESSION['login'] = 1;
+            $_SESSION['ID'] = $user["ID"];
+            $_SESSION['FirstName'] = $user["FirstName"];
+            $_SESSION['LastName'] = $user["LastName"];
+            $_SESSION['EmailAddress'] = $user["EmailAddress"];
+            $_SESSION['PhoneNumber'] = $user["PhoneNumber"];
+            $_SESSION['Gender'] = $user["Gender"];
+            $_SESSION['AccountType'] = $user["AccountType"];
+            $_SESSION['UserAddress'] = $user["UserAddress"];
 
 
             // Redirect to home page
             header("Location: index.php");
             exit();
-            
+
         } else {
             echo "Invalid email address or password.";
         }
@@ -82,9 +88,13 @@
 
 
             <label for="password">Password:</label>
-            <input class="inpt" type="password" id="password" name="password" required><br>
+            <input class="inpt" type="password" id="password" name="password" required><br><br><br>
 
-            <input type="submit" value="Login"> <span><a class="fp" href="index.php">Cancel</a></span><br>
+                <input class="login" type="submit" value="Login"><br>
+                
+            
+            <a class="cancel" style="float:right" href="index.php">Cancel</a>
+
         </form>
 
         <span><a class="fp" href="">Forgotten Password?</a></span><br>

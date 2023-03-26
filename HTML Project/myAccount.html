@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partner</title>
+    <title>My Account</title>
 
-    <link rel="stylesheet" href="CSS/partner.css">
+    <link rel="stylesheet" href="CSS/myAccount.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -21,6 +21,7 @@
         crossorigin="anonymous"></script>
 </head>
 <body>
+    
     <header id="header" class="sticky-top">
         <div class="container-fluid px-md-0">
             <h2><b>PLANT A TREE</b></h2>
@@ -51,7 +52,7 @@
                             </div>
                             -->
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Gift</a>
+                                <a class="nav-link" href="gift.html">Gift</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="benifits.html">Benifits</a>
@@ -61,7 +62,7 @@
                             <div class="dropdown-container">
                                 -->
                             <li class="nav-item">
-                                <a class=" nav-link" href="">About Us</a>
+                                <a class=" nav-link" href="aboutus.html">About Us</a>
                             </li>
                             <!--
                                 <div class="dropdown-content">
@@ -97,7 +98,7 @@
                             <div class="dropdown-container">
                                 -->
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Ask/Quote</a>
+                                    <a class="nav-link" href="ask_quote.html">Ask/Quote</a>
                                 </li>
                                 <!--
                                 <div class="dropdown-content">
@@ -106,7 +107,7 @@
                             </div>
                             -->
                             <li class="nav-item">
-                                <a class="nav-link" href="#">My Account</a>
+                                <a class="nav-link" href="myAccount.html">My Account</a>
                             </li>
                             <li id="Partner" class="nav-item">
                                 <a  class="nav-link"  href="partnerInformation.html">Partner</a>
@@ -147,58 +148,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section>
-     <h1 id="headline">Registration of Log In for Partner Account</h1>
-     <div class="registrationform">
-        <div class="Registration"action="registration.php" method="POST">
-            <h3 class="head">Registration For Account</h3><br>
-            <label class="labelform" for="first">First Name</label><br>
-            <input class="styl" type="text" name="firstname" id="first" placeholder="Enter First Name"><br><br>
-    
-            <label class="labelform" for="last">Last Name</label><br>
-            <input class="styl" type="text" name="lastname" id="last" placeholder="Enter Last Name"><br><br>
-    
-            <label class="labelform" for="mail">Email Address</label><br>
-            <input class="styl" type="email" name="email" id="mail" placeholder="Enter Your Email"><br><br>
-    
-            <label class="labelform" for="phon">Phone Number</label><br>
-            <input class="styl" type="tel" name="phonenumber" id="phon" placeholder="Enter Your Number"><br><br>
-            <!--
-             <label for="gen">Gender</label><br>
-             <ul>
-            <li><input class="gndr" type="radio" name="Gender" id="gen">Male</li>
-            <li><input class="gndr" type="radio" name="Gender" id="gen">Female</li>
-            <li><input class="gndr" type="radio" name="Gender" id="gen">Other</li>
-            <br><br>
-          </ul>
-          -->
-    
-            <label class="labelform" for="pass">Password</label><br>
-            <input class="styl" type="password" name="password" id="pass" placeholder="Enter Password"><br><br>
-    
-            <p id="para">By proceeding with the registration I confirm that I have read and accept the Terms and Conditions.<br><br>
-            <input class="sub" type="submit" value="Sign Up" name="submit"><br><br></p>
-        </div>
-    </div>
-        <!-- Log in system -->
-        <div class="Loged">
-            <div class="Partnerlogin">
-                <div class="PartnerLogin">
-                    <h3 >Log in Here</h3>
-                    <label class="labellog" for="mail">Email or Phone</label><br>
-                    <input class="styl" type="email/tel" name="email" placeholder="Enter Email or Number"><br><br>
-                    <label class="labellog" for="pass">Password</label><br>
-                    <input class="styl" type="password" name="" placeholder="Enter Password"><br><br>
-                    <button><a href="addproduct.html">Log In</a></button><br><br>
-        
-                    <a id="fp"href="" ><i>Forgotten Password?</i></a><br><br>
-        
-                </div>
-            </div>
-           
         </div>
     </section>
 </body>

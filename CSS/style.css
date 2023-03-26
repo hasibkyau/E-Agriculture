@@ -1,0 +1,296 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+ }
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body p {
+  margin: 0; 
+}
+
+#askAndQuote {
+  padding-bottom: 4rem; 
+}
+  #askAndQuote .sectionTitle {
+    padding: 2.5rem 0;
+    font-size: 3.25rem;
+    font-weight: 700;
+    text-align: center; 
+  }
+  #askAndQuote .accordion-item {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    margin-bottom: 1.52rem;
+  
+  }
+    #askAndQuote .accordion-item .accordion-button {
+      font-size: 1.85rem;
+      font-weight: 500;
+      color: #000;
+      border: none;
+      padding: 1rem 1.25rem;
+      box-shadow: none; 
+    }
+    #askAndQuote .accordion-item .accordion-body {
+      font-size: 2rem;
+      line-height: 1.45;
+      padding: 2.25rem; 
+    }
+  #askAndQuote .comment {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    padding: 2.5rem;
+    margin-top: 4rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+   }
+    #askAndQuote .comment .LeftAQ {
+      text-align: left;
+      font-size: 2rem;
+      font-weight: 600;
+      padding: 2rem 0; 
+    }
+    #askAndQuote .comment input, #askAndQuote .comment textarea {
+      font-size: 1.85rem;
+      font-weight: 500;
+      padding: 1rem 1.5rem;
+      color: #000;
+      margin-bottom: 1.5rem;
+     }
+    #askAndQuote .comment .btn {
+      min-width: 15rem;
+      color: #fff; 
+    }
+/*----------------About US-----------*/
+#ourMission {
+  padding: 4rem 0;
+ }
+  #ourMission .sectionTitle {
+    font-size: 5rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 1.25rem 0;
+     margin-top: -26px;
+  }
+  #ourMission .missionTitle {
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 2rem; 
+  }
+  #ourMission .aboutTitle {
+    font-size: 4rem;
+    font-weight: 500;
+    text-align: center;
+    padding-bottom: 2rem;
+    margin-top: 15px; 
+
+  }
+  #ourMission .aboutDetails {
+    font-size: 1.85rem;
+    font-weight: 400;
+    text-align: justify;
+    padding: 1rem 0; 
+    margin-top: -20px;
+  }
+  /*
+  #ourMission .leaderShip{
+    height: 600px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+  */
+  #ourMission .leaderShip .aboutTitle {
+    width: 500px !important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    font-size: 4rem;
+    font-weight: 500;
+    text-align: center;
+    padding-bottom: 2rem;
+    position: relative;
+    top: 15px;left: 300px;
+   }
+   .leadSingle{
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 8px 12px -2px,
+    rgba(184, 189, 198, 0.25) 0px 5px 20px 20px;
+   }
+   .text-center{
+    margin-top: 30px;
+   }
+  #ourMission .leaderShip .leadSingle {
+    max-width: 95%;
+    margin: 0 auto;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    padding: 2.5rem;
+    margin-top: 4rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem; 
+  }
+    #ourMission .leaderShip .leadSingle .userName {
+      font-size: 2.25rem;
+      font-weight: 600;
+      text-align: center;
+      padding-top: 1.25rem;
+     }
+    #ourMission .leaderShip .leadSingle .userDescrip {
+      padding-bottom: 1.25rem;
+      text-align: center;
+      font-size: 1.85rem;
+      font-weight: 500; 
+    }
+    #ourMission .leaderShip .leadSingle .userDetails {
+      padding: 1rem 0;
+      font-size: 1.6rem;
+      font-weight: 400;
+      text-align: center;
+     }
+    #ourMission .leaderShip .leadSingle .user {
+      width: 15rem;
+      margin: 0 auto; 
+    }
+    .manik{
+      height: 200px;
+      width: 200px;
+      border-radius: 100px;
+    }
+
+#giftCtrl {
+  padding: 4rem 0; 
+}
+  #giftCtrl .giftTitleMix {
+    margin-bottom: 3rem;
+    font-size: 3.5rem;
+    font-weight: 600;
+    padding: 2.5rem 2.75rem;
+    color: green;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; 
+  }
+  .giftTitle{
+    color: green;
+  }
+    #giftCtrl .giftTitleMix span {
+      font-size: 1.85rem;
+      font-weight: 500; 
+    }
+  #giftCtrl input, #giftCtrl textarea {
+    font-size: 1.85rem;
+    font-weight: 500;
+    padding: 1rem 1.85rem;
+   }
+  #giftCtrl .giftBox {
+    max-width: 95%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    padding: 2.5rem; 
+  }
+    #giftCtrl .giftBox .giftTitle {
+      font-size: 4rem;
+      font-weight: 500;
+      padding: 1.25rem 0;
+      padding-bottom: 2.25rem; 
+    }
+    #giftCtrl .giftBox .singleInput {
+      margin-bottom: 1.75rem; 
+    }
+  #giftCtrl .btn {
+    color: #fff;
+    min-width: 15rem; 
+    font-size: 20px;
+    
+  }
+  #giftCtrl .btn:hover{
+    background: rgb(144, 197, 29);
+    border: 1px solid rgb(144, 197, 29);
+  }
+
+  /*------------Footer--------------*/    
+  .footer{
+    width: 100%;
+    height: 300px !important;
+    background-color: rgb(4, 3, 16);
+  }
+  .snetwork{
+    width: 100%;
+    height: 50px;
+    background-color: greenyellow;
+    padding: 10px;
+    
+    
+  }
+  .pnetwork{
+    margin-left: 20px;
+    font-size: 16px !important;
+  }
+  .pic{
+    height: 20px;
+    width: 20px;
+    margin-left: 40px;
+    position: relative;
+    left: 1030px;
+    top: -20px !important;
+    border-radius: 5px;
+  }
+  .footer2{
+    width: 1200px !important;
+    height: 220px;
+    margin-top: 25px;
+    margin-left: 50px;
+    
+  }
+  .inkup{
+    position: relative;
+    left: 300px;
+  }
+  .step3{
+    position: absolute;
+  }
+  #agriculture{
+    width: 260px;
+    height: 230px;
+    font-size: 16px !important;
+    color: rgb(120, 157, 179);
+    margin-top: 7px !important;
+  }
+  #three{
+    font-size: 18px !important;
+    color: greenyellow;
+  }
+  .step4{
+    position: absolute;
+    left: 420px;
+  }
+  .step5{
+    position: absolute;
+    left: 670px;
+  }
+  .step6{
+    position: absolute;
+    left: 880px;
+  }
+  .step7{
+    position: absolute;
+    left: 1130px;
+  }
+  .none{
+    text-decoration: none !important;
+    font-size: 15px !important;
+    position: relative;
+    top: 6px;
+  }
+  
+  
+  .three{
+    color: white;
+    font-size: 18px !important;
+    font-weight: bold;
+  }
+
+  

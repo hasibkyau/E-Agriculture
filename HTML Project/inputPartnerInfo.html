@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partner</title>
-
-    <link rel="stylesheet" href="CSS/partner.css">
+    <title>Input Partner Info</title>
+    <link rel="stylesheet" href="CSS/inputPartnerInfo.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -19,8 +18,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
 </head>
 <body>
+    
     <header id="header" class="sticky-top">
         <div class="container-fluid px-md-0">
             <h2><b>PLANT A TREE</b></h2>
@@ -151,55 +152,35 @@
     </section>
 
     <section>
-     <h1 id="headline">Registration of Log In for Partner Account</h1>
-     <div class="registrationform">
-        <div class="Registration"action="registration.php" method="POST">
-            <h3 class="head">Registration For Account</h3><br>
-            <label class="labelform" for="first">First Name</label><br>
-            <input class="styl" type="text" name="firstname" id="first" placeholder="Enter First Name"><br><br>
-    
-            <label class="labelform" for="last">Last Name</label><br>
-            <input class="styl" type="text" name="lastname" id="last" placeholder="Enter Last Name"><br><br>
-    
-            <label class="labelform" for="mail">Email Address</label><br>
-            <input class="styl" type="email" name="email" id="mail" placeholder="Enter Your Email"><br><br>
-    
-            <label class="labelform" for="phon">Phone Number</label><br>
-            <input class="styl" type="tel" name="phonenumber" id="phon" placeholder="Enter Your Number"><br><br>
-            <!--
-             <label for="gen">Gender</label><br>
-             <ul>
-            <li><input class="gndr" type="radio" name="Gender" id="gen">Male</li>
-            <li><input class="gndr" type="radio" name="Gender" id="gen">Female</li>
-            <li><input class="gndr" type="radio" name="Gender" id="gen">Other</li>
-            <br><br>
-          </ul>
-          -->
-    
-            <label class="labelform" for="pass">Password</label><br>
-            <input class="styl" type="password" name="password" id="pass" placeholder="Enter Password"><br><br>
-    
-            <p id="para">By proceeding with the registration I confirm that I have read and accept the Terms and Conditions.<br><br>
-            <input class="sub" type="submit" value="Sign Up" name="submit"><br><br></p>
+        <div class="PartnerInfo">
+        <div class="partnerbio">
+            <h4 id="padd">Add Partner Identity</h4>
+            <label class="style2" for="">Name*</label><br>
+            <input class="PName" type="text" name="ProductName" placeholder="Enter Your Name : "><br><br>
+
+            <label class="style2" for="">Phone Number*</label><br>
+            <input class="PNumber" type="tel" name="PhoneNumber" placeholder="Enter Your Number : "><br><br>
+
+            <label class="style2" for="">Email Address*</label><br>
+            <input class="PEmail" type="mail" name="EmailAddress" placeholder="Enter Your Number : "><br><br>
+
+            <label class="style2" for="">Photo of Partner*</label><br>
+            <input class="PPhoto" type="file"><br><br>
+
+            <label class="style2" for="">Garden Name*</label><br>
+            <input class="GName"  type="text" name="GardenName" placeholder="Enter Your Garden Name : "><br><br>
+
+            <label class="style2" for="">Photo of Garden*</label><br>
+            <input class="GPhoto" type="file"><br><br>
+
+            <label class="style2" for="">Garden Description*</label><br>
+            <input class="GDescription"  type="text" name="GardenNDescription" placeholder="Enter Garden Description : "><br><br><br>
+
+            <input class="sub" type="submit" value="Submit" name="submit">
+
         </div>
-    </div>
-        <!-- Log in system -->
-        <div class="Loged">
-            <div class="Partnerlogin">
-                <div class="PartnerLogin">
-                    <h3 >Log in Here</h3>
-                    <label class="labellog" for="mail">Email or Phone</label><br>
-                    <input class="styl" type="email/tel" name="email" placeholder="Enter Email or Number"><br><br>
-                    <label class="labellog" for="pass">Password</label><br>
-                    <input class="styl" type="password" name="" placeholder="Enter Password"><br><br>
-                    <button><a href="addproduct.html">Log In</a></button><br><br>
-        
-                    <a id="fp"href="" ><i>Forgotten Password?</i></a><br><br>
-        
-                </div>
-            </div>
-           
         </div>
     </section>
+    
 </body>
 </html>

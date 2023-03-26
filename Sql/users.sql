@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2023 at 01:43 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- Generation Time: Mar 26, 2023 at 08:20 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,32 +34,24 @@ CREATE TABLE `users` (
   `LastName` varchar(50) NOT NULL,
   `EmailAddress` varchar(255) NOT NULL,
   `PhoneNumber` varchar(20) NOT NULL,
-  `Gender` enum('Male','Female','Other') NOT NULL,
+  `Gender` text NOT NULL,
   `AccountType` enum('Admin','User') NOT NULL,
   `Password` varchar(255) NOT NULL,
-  `UserAddress` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `UserAddress` varchar(255) NOT NULL,
+  `account_status` varchar(20) NOT NULL DEFAULT 'pending'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`ID`, `Date`, `FirstName`, `LastName`, `EmailAddress`, `PhoneNumber`, `Gender`, `AccountType`, `Password`, `UserAddress`) VALUES
-(1, '2023-03-16 08:02:48', 'lishan', 'bhuiyan', 'lishanboss121@gmail.com', '1811561101', 'Male', 'Admin', 'aaaaa', 'lishanboss121@gmail.com'),
-(2, '2023-03-16 08:05:09', 'lishan', 'bhuiyan', 'lishanboss12145@gmail.com', '1811561101', 'Male', 'Admin', 'aaaaa', 'lishanboss121@gmail.com'),
-(3, '2023-03-16 08:05:09', 'lishan', 'bhuiyan', 'lishanboss12100@gmail.com', '1811561101', 'Male', 'Admin', 'aaaaa', 'lishanboss121@gmail.com'),
-(4, '2023-03-16 08:05:30', 'Manik', 'bhuiyan', 'manik2545@gmail.com', '1811561101', 'Male', 'Admin', 'aaaaa', 'lishanboss121@gmail.com'),
-(5, '2023-03-16 08:05:30', 'Manik', 'bhuiyan', 'manik@gmail.com', '1811561101', 'Male', 'Admin', 'aaaaa', 'lishanboss121@gmail.com'),
-(6, '2023-03-16 08:06:29', 'Hasib', 'bhuiyan', 'hasib@gmail.com', '1811561101', 'Male', 'Admin', 'aaaaa', 'lishanboss121@gmail.com'),
-(7, '2023-03-16 08:06:29', 'Hasib', 'bhuiyan', 'hasib2@gmail.com', '1811561101', 'Male', 'Admin', 'aaaaa', 'lishanboss121@gmail.com'),
-(8, '2023-03-16 08:07:34', 'Mehedi', 'bhuiyan', 'Mehedi@gmail.com', '1811561101', 'Male', 'Admin', 'aaaaa', 'lishanboss121@gmail.com'),
-(9, '2023-03-16 08:07:34', 'Mehedi', 'bhuiyan', 'Mehedi456@gmail.com', '1811561101', 'Male', 'Admin', 'aaaaa', 'lishanboss121@gmail.com'),
-(10, '2023-03-16 08:15:11', 'Nafiul', 'bhuiyan', 'nafiul2@gmail.com', '1811561101', 'Male', 'User', 'aaaaa', 'lishanboss121@gmail.com'),
-(11, '2023-03-16 08:15:11', 'Nafiul', 'bhuiyan', 'nafiul@gmail.com', '1811561101', 'Male', 'User', 'aaaaa', 'lishanboss121@gmail.com'),
-(12, '2023-03-16 08:38:29', 'No ', 'name', 'name@gmail.com', '01745588745', 'Male', 'Admin', '123456789', 'Enayetpur'),
-(13, '2023-03-16 08:38:29', 'No ', 'name55', 'name@gmail.com', '01745588745', 'Male', 'Admin', '123456789', 'Enayetpur'),
-(14, '2023-03-16 08:40:57', 'Bangla', 'Desh', 'bangla@gmail.com', '025455454', 'Female', 'Admin', '456789', 'Sirajganj'),
-(15, '2023-03-16 09:48:53', 'lishan', 'bhuiyan', 'lishanbogfdgss121@gmail.com', '1811561101', 'Female', 'Admin', 'aaaaa', 'sdaffdasdfsasdf');
+INSERT INTO `users` (`ID`, `Date`, `FirstName`, `LastName`, `EmailAddress`, `PhoneNumber`, `Gender`, `AccountType`, `Password`, `UserAddress`, `account_status`) VALUES
+(1, '2023-03-16 08:02:48', 'Tree', 'Zone', 'plant.admin@gmail.com', '1811561101', 'Male', 'User', 'admin1234', 'Enayetpur, Sirajganj', 'active'),
+(15, '2023-03-16 09:48:53', 'lishan', 'bhuiyan', 'lishanbogfdgss121@gmail.com', '1811561101', 'Male', 'Admin', 'aaaaa', 'Dhaka', 'active'),
+(16, '2023-03-19 07:13:08', 'Merina', 'Khatun', 'merina@gmail.com', '01758696985', 'Female', 'User', '123456', 'Ajugora, Enayetpur, Sirajganj', 'active'),
+(17, '2023-03-19 09:10:27', 'Himel', 'Rana', 'himel@gmail.com', '01856985874', 'Male', '', '123456', 'Sirajganj,', 'active'),
+(19, '2023-03-20 06:08:28', 'Rofikul', 'Islam', 'rofikhasan@gtmail.com', '01745325687', 'Male', '', '654321', 'Barishal', 'active'),
+(20, '2023-03-20 14:52:44', 'Manik', 'Sarkar', 'maniksarkar934@gmail.com', '01791492957', 'Male', 'User', 'manik123', 'sirajganj', 'active');
 
 --
 -- Indexes for dumped tables
@@ -79,7 +71,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -67,20 +67,20 @@ $totalPartners = $totalPartners['COUNT(*)'];
     <div class="container">
 
         <div class="row my-4">
-            <h1 class="ml-3 text-info">Admin Pannel</h1>
+            <h1 class="ml-3 text-success">Admin Pannel</h1>
         </div>
         <div class="row ">
 
             <div class="col-3">
-                <a class="d-flex btn btn-info border" href="ActiveProducts.php">Active Customers</a>
-                <a class="d-flex btn btn-info border" href="MyOrders.php">Active Partners</a>
-                <a class="d-flex btn btn-info border" href="MyOrders.php">Partner Requests</a>
-                <a class="d-flex btn btn-info border" href="MyOrders.php">Blocked Partners</a>
-                <a class="d-flex btn btn-info border" href="MyOrders.php">Blocked Customers</a>
-                <a class="d-flex btn btn-info border" href="MyOrders.php">Customer Orders</a>
-                <a class="d-flex btn btn-info border" href="ActiveProducts.php">Active Products</a>
-                <a class="d-flex btn btn-info border" href="PendingProducts.php">Pending Products</a>
-                <a class="d-flex btn btn-info border" href="addproduct.php">Messages</a>
+                <a class="d-flex btn btn-success border" href="ActiveProducts.php">Active Customers</a>
+                <a class="d-flex btn btn-success border" href="MyOrders.php">Active Partners</a>
+                <a class="d-flex btn btn-success border" href="MyOrders.php">Partner Requests</a>
+                <a class="d-flex btn btn-success border" href="MyOrders.php">Blocked Partners</a>
+                <a class="d-flex btn btn-success border" href="MyOrders.php">Blocked Customers</a>
+                <a class="d-flex btn btn-success border" href="MyOrders.php">Customer Orders</a>
+                <a class="d-flex btn btn-success border" href="ActiveProducts.php">Active Products</a>
+                <a class="d-flex btn btn-success border" href="PendingProducts.php">Pending Products</a>
+                <a class="d-flex btn btn-success border" href="addproduct.php">Messages</a>
             </div>
 
             <div class="col-9">
@@ -89,9 +89,9 @@ $totalPartners = $totalPartners['COUNT(*)'];
 
 
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                        <a class="nav-link m-0 p-0" href="TotalProducts.php">
+                        <a class="nav-link m-0 p-0" href="ActiveProducts.php">
                             <div class="card  mb-3">
-                                <div class="text-center card-header text-white bg-info">Active Products</div>
+                                <div class="text-center card-header text-white bg-success">Active Products</div>
                                 <div class="card-body border">
                                     <h1 class="card-text text-center"><?php echo $totalProducts ?></h1>
                                 </div>
@@ -102,7 +102,7 @@ $totalPartners = $totalPartners['COUNT(*)'];
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <a class="nav-link m-0 p-0" href="PendingProducts.php">
                             <div class="card  mb-3">
-                                <div class="text-center card-header text-white bg-info">Pending Products</div>
+                                <div class="text-center card-header text-white bg-success">Pending Products</div>
                                 <div class="card-body border">
                                     <h1 class="card-text text-center"><?php echo $totalProducts ?></h1>
                                 </div>
@@ -113,7 +113,7 @@ $totalPartners = $totalPartners['COUNT(*)'];
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <a class="nav-link m-0 p-0" href="TotalProducts.php">
                             <div class="card  mb-3" >
-                                <div class="text-center card-header text-white bg-info">Total Orders</div>
+                                <div class="text-center card-header text-white bg-success">Total Orders</div>
                                 <div class="card-body border">
                                     <h1 class="card-text text-center"><?php echo $totalOrders ?></h1>
                                 </div>
@@ -126,7 +126,7 @@ $totalPartners = $totalPartners['COUNT(*)'];
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <a class="nav-link m-0 p-0" href="TotalProducts.php">
                             <div class="card  mb-3" >
-                                <div class="text-center card-header text-white bg-info">Active Partners</div>
+                                <div class="text-center card-header text-white bg-success">Active Partners</div>
                                 <div class="card-body border">
                                     <h1 class="card-text text-center"><?php echo $totalPartners ?></h1>
                                 </div>
@@ -137,7 +137,7 @@ $totalPartners = $totalPartners['COUNT(*)'];
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <a class="nav-link m-0 p-0" href="TotalProducts.php">
                             <div class="card  mb-3" >
-                                <div class="text-center card-header text-white bg-info">Active Customers</div>
+                                <div class="text-center card-header text-white bg-success">Active Customers</div>
                                 <div class="card-body border">
                                     <h1 class="card-text text-center"><?php echo $totalCustomers ?></h1>
                                 </div>

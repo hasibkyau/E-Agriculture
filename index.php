@@ -48,7 +48,7 @@ if (!$conn) {
 
     // Build the SQL query
     if ($category) {
-        echo $category;
+        // echo $category;
         $sql = "SELECT * FROM products WHERE product_status ='approved' AND category = '$category'";
     } else {
         $sql = "SELECT * FROM products WHERE product_status ='approved'";
@@ -61,7 +61,7 @@ if (!$conn) {
 
     if (isset($_GET['search'])) {
         $search =  $_GET['search'];
-        echo $search;
+        // echo $search;
         $sql = "SELECT * FROM products WHERE product_status ='approved' AND name LIKE '%$search%' OR description LIKE '%$search%'";
 
     } 

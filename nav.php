@@ -112,9 +112,9 @@ if (!isset($_SESSION['ID'])) {
                         </ul>
                         <form class="form-inline my-2  my-lg-0">
 
-                            <img src="Resources/Images/search.png" alt="search" class="img-fluid search"
+                            <!-- <img src="Resources/Images/search.png" alt="search" class="img-fluid search"
                                 data-toggle="modal" data-target="#exampleModalCenter">
-                            <!-- <a class="nav-link" id="loginBtn" href="login.php">Log In</a> -->
+                            <a class="nav-link" id="loginBtn" href="login.php">Log In</a> -->
                             <?php
                             if (isset($_SESSION['login'])){
                                 echo "<a class='nav-link' id='loginBtn'  href='logout.php'>" . 'Logout' . "</a>";

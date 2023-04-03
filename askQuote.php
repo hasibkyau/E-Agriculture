@@ -28,6 +28,7 @@
 
         // check if any products were found
         $conn = mysqli_connect('localhost', 'root', '', 'project');
+        // $conn = mysqli_connect("sql100.epizy.com", "epiz_33880372", "BwcOpZ1bRKJQ", "epiz_33880372_treetrading");
         $sql = "SELECT * FROM faq";
         $result = mysqli_query($conn, $sql);
 
@@ -65,12 +66,13 @@
 
         echo $email;
 
-        $conn = mysqli_connect('localhost', 'root', '', 'project');
+        // $conn = mysqli_connect('localhost', 'root', '', 'project');
+        $conn = mysqli_connect("sql100.epizy.com", "epiz_33880372", "BwcOpZ1bRKJQ", "epiz_33880372_treetrading");
         $query = "INSERT INTO faq (user_id, email, question) VALUES ('$user_id', '$email', '$question');";
         mysqli_query($conn, $query);
 
-        header("Location: askQuote.php");
-        exit();
+        // header("Location: askQuote.php");
+        // exit();
       }
       ?>
 

@@ -87,6 +87,11 @@ if (isset($_POST['Delete'])) {
 
 <body>
 
+    <?php
+    include("nav.php ");
+    ?>
+
+
     <div class="container">
 
         <div class="row my-4">

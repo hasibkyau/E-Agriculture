@@ -53,6 +53,10 @@ if (isset($_POST['Delete'])) {
 </head>
 
 <body>
+<?php
+    include("nav.php ");
+    ?>
+
 
     <div class="container">
 
@@ -81,8 +85,8 @@ if (isset($_POST['Delete'])) {
                     echo "<p class='card-text'>" . 'Price: ' . $row['price'] . ' BDT' . "</p>";
                     echo "<p class='card-text'>" . 'Customer ID: ' . $row['customer_id'] . "</p>";
                     echo "<form class='row' method='POST' enctype='multipart/form-data'>";
-                    echo " <button type='submit' value='" . $row['id'] . "' name='Decline' class='btn btn-success' > Approve Order <button/>";
-                    echo " <button type='submit' value='" . $row['id'] . "' name='Delete' class='btn btn-secondary' > Delete Order<button/>";
+                    echo " <button type='submit' value='" . $row['id'] . "' name='Decline' class='btn btn-success' > Approve Order </button/>";
+                    echo " <a type='submit' href='DashBoard.php' class='btn btn-secondary' >" . "Cancel" . "</a>";
                     echo "</form>";
 
                     echo "</div>";

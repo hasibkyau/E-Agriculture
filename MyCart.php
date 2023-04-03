@@ -1,8 +1,9 @@
 <?php
 
-    require_once("connect.php");
-    if (!isset($_SESSION['ID'])) {
-        session_start();}
+require_once("connect.php");
+if (!isset($_SESSION['ID'])) {
+    session_start();
+}
 ?>
 
 <?php
@@ -17,15 +18,15 @@ $result = mysqli_query($conn, $sql);
 
 if (isset($_POST['Remove'])) {
     $id = $_POST['Remove'];
-    echo $id."This is deleted that is selected";
+    echo $id . "This is deleted that is selected";
     // header("Location: PendingProducts.php");
     // exit();
     // echo "hello";
-    
+
     // global $conn;
     $sql = "DELETE FROM cart WHERE id='$id'";
     mysqli_query($conn, $sql);
-        header("Location: MyCart.php");
+    header("Location: MyCart.php");
     exit();
 }
 ?>
@@ -54,6 +55,10 @@ if (isset($_POST['Remove'])) {
 </head>
 
 <body>
+    <?php
+    include("nav.php ");
+    ?>
+
 
     <div class="container">
 
@@ -83,7 +88,7 @@ if (isset($_POST['Remove'])) {
                     $path = "uploads/products/";
                     $src = $path . $row['image'];
 
-                    
+
                     echo "<div class='card mt-3'>";
                     // echo "<div class='text-center card-header text-white bg-success'>".$row['name']."</div>";
                     echo "<img class='card-img-top'  src='" . $src . "' alt='" . $row['name'] . "' width='200' height='200'>";
@@ -96,7 +101,7 @@ if (isset($_POST['Remove'])) {
                     echo " <button type='submit' value='" . $cart_id . "' name='Remove' class='btn btn-success' > Remove<button/>";
                     echo "</form>";
                     echo " <a class='btn btn-primary' href='OrderNow.php?id=" . $row['id'] . "'> Order Now <a/>";
-    
+
                     echo "</div>";
                 }
             } else {

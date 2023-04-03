@@ -1,7 +1,8 @@
 <?php
 // connect to the database
 $conn = mysqli_connect('localhost', 'root', '', 'project');
-
+// $conn = mysqli_connect("sql100.epizy.com", "epiz_33880372", "BwcOpZ1bRKJQ", "epiz_33880372_treetrading");
+  
 // check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());

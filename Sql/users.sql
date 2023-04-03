@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2023 at 08:20 PM
+-- Generation Time: Apr 03, 2023 at 05:26 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -35,7 +35,7 @@ CREATE TABLE `users` (
   `EmailAddress` varchar(255) NOT NULL,
   `PhoneNumber` varchar(20) NOT NULL,
   `Gender` text NOT NULL,
-  `AccountType` enum('Admin','User') NOT NULL,
+  `AccountType` text NOT NULL,
   `Password` varchar(255) NOT NULL,
   `UserAddress` varchar(255) NOT NULL,
   `account_status` varchar(20) NOT NULL DEFAULT 'pending'
@@ -49,9 +49,10 @@ INSERT INTO `users` (`ID`, `Date`, `FirstName`, `LastName`, `EmailAddress`, `Pho
 (1, '2023-03-16 08:02:48', 'Tree', 'Zone', 'plant.admin@gmail.com', '1811561101', 'Male', 'User', 'admin1234', 'Enayetpur, Sirajganj', 'active'),
 (15, '2023-03-16 09:48:53', 'lishan', 'bhuiyan', 'lishanbogfdgss121@gmail.com', '1811561101', 'Male', 'Admin', 'aaaaa', 'Dhaka', 'active'),
 (16, '2023-03-19 07:13:08', 'Merina', 'Khatun', 'merina@gmail.com', '01758696985', 'Female', 'User', '123456', 'Ajugora, Enayetpur, Sirajganj', 'active'),
-(17, '2023-03-19 09:10:27', 'Himel', 'Rana', 'himel@gmail.com', '01856985874', 'Male', '', '123456', 'Sirajganj,', 'active'),
-(19, '2023-03-20 06:08:28', 'Rofikul', 'Islam', 'rofikhasan@gtmail.com', '01745325687', 'Male', '', '654321', 'Barishal', 'active'),
-(20, '2023-03-20 14:52:44', 'Manik', 'Sarkar', 'maniksarkar934@gmail.com', '01791492957', 'Male', 'User', 'manik123', 'sirajganj', 'active');
+(17, '2023-03-19 09:10:27', 'Himel', 'Rana', 'himel@gmail.com', '01856985874', 'Male', 'Partner', '123456', 'Sirajganj,', 'active'),
+(19, '2023-03-20 06:08:28', 'Rofikul', 'Islam', 'rofikhasan@gtmail.com', '01745325687', 'Male', 'Partner', '654321', 'Barishal', 'active'),
+(20, '2023-03-20 14:52:44', 'Manik', 'Sarkar', 'maniksarkar934@gmail.com', '01791492957', 'Male', 'User', 'manik123', 'sirajganj', 'active'),
+(21, '2023-04-03 03:15:06', 'Md. Mahmudul', 'Hasan', 'mahmud@gmail.com', '01758963654', 'Male', 'Partner', '123456', 'Sirajganj, Bangladesh', 'active');
 
 --
 -- Indexes for dumped tables
@@ -71,7 +72,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

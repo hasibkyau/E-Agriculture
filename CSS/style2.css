@@ -1,0 +1,105 @@
+.carousel-img-1 {
+  background-image: url("../Resources/contact_us.jpg");
+  background-size: cover;
+}
+.carousel-img-2 {
+  background-image: url("../Resources/contact_us.jpg");
+  background-size: cover;
+}
+.carousel-img-3 {
+  background-image: url("../Resources/contact_us.jpg");
+  background-size: cover;
+}
+#homeIcon .fa {
+  font-size: 50px;
+}
+#getStarted {
+  position: relative;
+  background: url("../Resources/contact_us.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 350px;
+}
+#getStarted .dark-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+#homeVedio {
+  position: relative;
+  background: url("../Resources/contact_us.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 250px;
+}
+#homeVedio .dark-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+#homeVedio .fa {
+  font-size: 50px;
+}
+#photoGalery img {
+  min-height: 250px;
+}
+#copyright {
+  background: #000;
+}
+#page-header {
+  background-image: url("../Resources/contact_us.jpg");
+  background-size: cover;
+  height: 200px;
+  background-attachment: fixed;
+}
+#whatWeDo img {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+}
+#iconBox .fa {
+  font-size: 50px;
+}
+#testimonial .slick-prev:before, #testimonial .slick-next:before {
+  color: #000;
+}
+#sarvice-header {
+  background-image: url("../Resources/contact_us.jpg");
+  background-size: cover;
+  height: 200px;
+  background-attachment: fixed;
+}
+@media (max-width: 767px) {
+  .nav-item {
+      padding-left: 0 !important;
+ }
+  #getStarted {
+      min-height: 300px;
+ }
+}
+@media (max-width: 480px) {
+  .carousel h2 {
+      font-size: 2rem;
+ }
+  #getStarted {
+      min-height: 430px;
+      padding-top: 1rem;
+ }
+  #feature h2 {
+      font-size: 1.8rem;
+ }
+  #feature p {
+      text-align: justify;
+ }
+  #whatWeDo p {
+      text-align: justify;
+ }
+}

@@ -115,8 +115,8 @@ if (isset($_POST['Delete'])) {
                     echo "<div class='modal-footer'>";
 
                     echo "<form class='row' method='POST' enctype='multipart/form-data'>";
-                    echo " <button type='submit' value='" . $row['id'] . "' name='Decline' class='btn btn-success' > Decline<button/>";
-                    echo " <button type='submit' value='" . $row['id'] . "' name='Delete' class='btn btn-secondary' > Delete<button/>";
+                    echo " <button type='submit' value='" . $row['id'] . "' name='Decline' class='btn btn-success' > Decline</button>";
+                    echo " <button type='submit' value='" . $row['id'] . "' name='Delete' class='btn btn-secondary' > Delete</button>";
                     echo "<button type='button' class='btn btn-danger' data-dismiss='modal'>Close</button>";
                     echo "</form>";
 

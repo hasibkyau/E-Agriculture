@@ -89,8 +89,8 @@ if (isset($_POST['Delete'])) {
                     // echo "<p class='card-text'>" . 'Email: ' . $row['EmailAddress'] . "</p>";
 
                     echo "<form class='row' method='POST' enctype='multipart/form-data'>";
-                    echo " <button type='submit' value='" . $row['ID'] . "' name='Active' class='btn btn-success' >" ."Active". "<button/>";
-                    echo " <button type='submit' value='" . $row['ID'] . "' name='Delete' class='btn btn-secondary' >" ."Delete". "<button/>";
+                    echo " <button type='submit' value='" . $row['ID'] . "' name='Active' class='btn btn-success' >" ."Approve". "</button>";
+                    echo " <a type='submit' href='DashBoard.php' class='btn btn-secondary' >" ."Cancel". "</a>";
                     echo "</form>";
 
 

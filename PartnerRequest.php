@@ -8,7 +8,7 @@ if (!isset($_SESSION['ID'])) {
 
 
 if (isset($_POST['Active'])) {
-    echo "This is Activeed that is selected";
+    // echo "This is Activeed that is selected";
     // header("Location: ActiveProducts.php");
     // exit();
     // echo "hello";
@@ -21,7 +21,7 @@ if (isset($_POST['Active'])) {
 if (isset($_POST['Delete'])) {
     // echo "This is Deleted that is selected";
     $id = $_POST['Delete'];
-    echo $id . "This is Deleted that is selected";
+    // echo $id . "This is Deleted that is selected";
     
     // global $conn;
     $sql = "DELETE FROM users WHERE ID=$id";
@@ -101,7 +101,7 @@ if (isset($_POST['Delete'])) {
                     echo "</div>";
                 }
             } else {
-                echo "No products found.";
+                echo "No customer request found.";
             }
 
             // close the database connection

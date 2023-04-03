@@ -69,8 +69,8 @@
         $query = "INSERT INTO faq (user_id, email, question) VALUES ('$user_id', '$email', '$question');";
         mysqli_query($conn, $query);
 
-        // header("Location: askQuote.php");
-        // exit();
+        header("Location: askQuote.php");
+        exit();
       }
       ?>
 

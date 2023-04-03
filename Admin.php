@@ -1,5 +1,6 @@
 <?php
 $conn = mysqli_connect('localhost', 'root', '', 'project');
+// $conn = mysqli_connect("sql100.epizy.com", "epiz_33880372", "BwcOpZ1bRKJQ", "epiz_33880372_treetrading");
 
 // session_start();
 if (!isset($_SESSION['ID'])) {

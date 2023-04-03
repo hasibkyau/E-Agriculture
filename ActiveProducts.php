@@ -1,5 +1,6 @@
 <?php
 $conn = mysqli_connect('localhost', 'root', '', 'project');
+// $conn = mysqli_connect("sql100.epizy.com", "epiz_33880372", "BwcOpZ1bRKJQ", "epiz_33880372_treetrading");
 
 // session_start();
 if (!isset($_SESSION['ID'])) {
@@ -22,7 +23,7 @@ if (isset($_POST['Delete'])) {
     // echo "This is Deleted that is selected";
     $id = $_POST['Delete'];
     echo $id . "This is Deleted that is selected";
-    
+
     // global $conn;
     $sql = "DELETE FROM products WHERE id=$id";
     mysqli_query($conn, $sql);
@@ -53,6 +54,9 @@ if (isset($_POST['Delete'])) {
 </head>
 
 <body>
+    <?php
+    include("nav.php ");
+    ?>
 
     <div class="container">
 

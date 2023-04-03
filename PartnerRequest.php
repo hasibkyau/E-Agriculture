@@ -22,7 +22,7 @@ if (isset($_POST['Delete'])) {
     // echo "This is Deleted that is selected";
     $id = $_POST['Delete'];
     // echo $id . "This is Deleted that is selected";
-    
+
     // global $conn;
     $sql = "DELETE FROM users WHERE ID=$id";
     mysqli_query($conn, $sql);
@@ -53,6 +53,9 @@ if (isset($_POST['Delete'])) {
 </head>
 
 <body>
+    <?php
+    include("nav.php ");
+    ?>
 
     <div class="container">
 
@@ -78,19 +81,19 @@ if (isset($_POST['Delete'])) {
                     $src = "Resources\Images\male_profile.png";
 
                     echo "<div class='col-lg-3'>";
-                    
+
                     echo "<div class='card mt-3'>";
                     // echo "<div class='text-center card-header text-white bg-success'>".$row['name']."</div>";
                     echo "<img class='card-img-top rounded-circle'  src='" . $src . "' alt='" . $row['FirstName'] . "' width='200' height='200'>";
                     echo "<div class='card-body'>";
                     // echo "<p>" . $row['description'] . "</p>";
-                    echo "<h2 >" . $row['FirstName']. " " . $row['LastName'] . "</h2>";
+                    echo "<h2 >" . $row['FirstName'] . " " . $row['LastName'] . "</h2>";
                     echo "<p class='card-text'>" . 'Account Type: ' . $row['AccountType'] . "</p>";
                     // echo "<p class='card-text'>" . 'Email: ' . $row['EmailAddress'] . "</p>";
 
                     echo "<form class='row' method='POST' enctype='multipart/form-data'>";
-                    echo " <button type='submit' value='" . $row['ID'] . "' name='Active' class='btn btn-success' >" ."Active". "<button/>";
-                    echo " <button type='submit' value='" . $row['ID'] . "' name='Delete' class='btn btn-secondary' >" ."Delete". "<button/>";
+                    echo " <button type='submit' value='" . $row['ID'] . "' name='Active' class='btn btn-success' >" . "Active" . "<button/>";
+                    echo " <a type='submit' href='DashBoard.php' class='btn btn-secondary' >" . "Cancel" . "</a>";
                     echo "</form>";
 
 

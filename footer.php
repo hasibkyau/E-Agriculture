@@ -44,7 +44,7 @@
             <a class="none" href="">Help Center</a><br>
             <a class="none" href="">How ro Order</a><br>
             <a class="none" href="">Returns & Refunds</a><br>
-            <a class="none" href="">Contuct Us</a><br>
+            <a class="none" href="Contact.php">Contuct Us</a><br>
         </div>
         <div class="step5">
             <h4 class="three">Sell Product</h4>

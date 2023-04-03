@@ -61,7 +61,9 @@ if (isset($_POST['Remove'])) {
             <h1 class="mx-auto ml-3 text-success">My Cart</h1>
 
         </div>
+
         <a class="btn btn-danger" href="index.php">Back</a>
+
         <div class="row ">
 
             <?php
@@ -81,8 +83,7 @@ if (isset($_POST['Remove'])) {
                     $path = "uploads/products/";
                     $src = $path . $row['image'];
 
-                    echo "<div class='col-lg-3'>";
-
+                    
                     echo "<div class='card mt-3'>";
                     // echo "<div class='text-center card-header text-white bg-success'>".$row['name']."</div>";
                     echo "<img class='card-img-top'  src='" . $src . "' alt='" . $row['name'] . "' width='200' height='200'>";
@@ -95,11 +96,7 @@ if (isset($_POST['Remove'])) {
                     echo " <button type='submit' value='" . $cart_id . "' name='Remove' class='btn btn-success' > Remove<button/>";
                     echo "</form>";
                     echo " <a class='btn btn-primary' href='OrderNow.php?id=" . $row['id'] . "'> Order Now <a/>";
-                    
-                    echo "</div>";
-
-                    
-
+    
                     echo "</div>";
                 }
             } else {

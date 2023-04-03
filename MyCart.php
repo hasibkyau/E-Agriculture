@@ -88,21 +88,64 @@ if (isset($_POST['Remove'])) {
                     $path = "uploads/products/";
                     $src = $path . $row['image'];
 
+                    // echo "</div>";
+                    echo "<div class='col-lg-3'>";
 
-                    echo "<div class='card mt-3'>";
+                    echo "<div class='card mt-3' data-toggle='modal' data-target='#image-modal-" . $row['id'] . "'>";
                     // echo "<div class='text-center card-header text-white bg-success'>".$row['name']."</div>";
                     echo "<img class='card-img-top'  src='" . $src . "' alt='" . $row['name'] . "' width='200' height='200'>";
                     echo "<div class='card-body'>";
                     // echo "<p>" . $row['description'] . "</p>";
                     echo "<h2 >" . $row['name'] . "</h2>";
                     echo "<p class='card-text'>" . 'Price: ' . $row['price'] . ' BDT' . "</p>";
-
                     echo "<form class='row' method='POST' enctype='multipart/form-data'>";
-                    echo " <button type='submit' value='" . $cart_id . "' name='Remove' class='btn btn-success' > Remove<button/>";
+                    echo " <button type='submit' value='" . $cart_id . "' name='Remove' class='d-inline-flex btn btn-success' >" ."Remove". "</button>";
+                    echo " <a class='text-center btn btn-sm m-0 px-0 mx-1 bg-primary' style='margin:2px' href='OrderNow.php?id=" . $row['id'] . "'>"; 
+                    echo "<span class='btn' style='font-size:16px; color:white;'>Order Now </span>";
+                    echo "</a>";
+                    
                     echo "</form>";
-                    echo " <a class='btn btn-primary' href='OrderNow.php?id=" . $row['id'] . "'> Order Now <a/>";
+                    echo "</div>";
 
                     echo "</div>";
+
+
+                    // Create a Bootstrap modal for each image
+                    echo "<div class='modal fade' id='image-modal-" . $row['id'] . "' tabindex='-1' role='dialog' aria-labelledby='image-modal-label-" . $row['id'] . "' aria-hidden='true'>";
+                    echo "<div class='modal-dialog' role='document'>";
+                    echo "<div class='modal-content'>";
+                    echo "<div class='modal-header'>";
+                    echo "<h5 class='modal-title' id='image-modal-label-" . $row['id'] . "'>" . $row['name'] . "</h5>";
+                    echo "<button type='button' class='close' data-dismiss='modal' aria-label='Close'>";
+                    echo "<span aria-hidden='true'>&times;</span>";
+                    echo "</button>";
+                    echo "</div>";
+                    echo "<div class='modal-body'>";
+                    echo "<img src='" . $src . "' alt='" . $row['image'] . "' class='img-fluid'>";
+                    echo "<h2  class='fruit'>" . $row['name'] . "</h2>";
+                    echo "<p>" . $row['description'] . "</p>";
+                    echo "<p class='card-text'>" . 'Price: ' . $row['price'] . ' BDT' . "</p>";
+                    echo "<p class='card-text'>" . 'Seller ID: ' . $row['user_id'] . "</p>";
+                    echo "</div>";
+
+                    echo "<div class='modal-footer'>";
+
+                    echo "<form class='row' method='POST' enctype='multipart/form-data'>";
+                    echo " <button type='submit' value='" . $cart_id . "' name='Remove' class='d-inline-flex btn btn-success' >" ."Remove". "</button>";
+                    echo " <a class='text-center btn btn-sm m-0 px-0 mx-1 bg-primary' style='margin:2px' href='OrderNow.php?id=" . $row['id'] . "'>"; 
+                    echo "<span class='btn' style='font-size:16px; color:white;'>Order Now </span>";
+                    echo "</a>";
+                    echo "<button type='button' class='btn btn-danger' data-dismiss='modal'>Close</button>";
+                    
+                    echo "</form>";
+
+                    echo "</div>";
+                    echo "</div>";
+                    echo "</div>";
+                    echo "</div>";
+
+                    echo "</div>";
+                   
                 }
             } else {
                 echo "No products found.";

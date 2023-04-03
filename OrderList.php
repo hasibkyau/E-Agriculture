@@ -90,6 +90,8 @@ if (isset($_POST['Delete'])) {
                     echo "</form>";
 
                     echo "</div>";
+
+                    
                 }
             } else {
                 echo "No products found.";
